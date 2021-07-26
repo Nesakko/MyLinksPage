@@ -53,11 +53,11 @@ h1 {
   border-radius: 24px;
   cursor: pointer;
   text-align:center;
-  margin-top: 18px;
-  margin-bottom: 18px;
-  padding-top: 18px;
-  padding-bottom: 18px;
-  font-size: 18px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  font-size: 16px;
   color: #ccc;
   text-decoration: none;
   background-color: rgba(0,0,0,.1);

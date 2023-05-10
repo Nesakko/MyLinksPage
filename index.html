@@ -44,7 +44,7 @@ footer{
   font-size:0.8rem;
 }
 a{
-  color:#ddd;
+  color:#fff;
 }
 a:hover,a:focus{color:#fff;}
 .linkList{
@@ -56,22 +56,89 @@ a:hover,a:focus{color:#fff;}
   display:block;
   border-radius:1rem;
   border:2px solid;
-  border-color:#ffffff11;
+  border-color:#333;
   cursor:pointer;
   margin:1rem 0;
   padding :1rem 0;
+  color: #ccc;
   text-decoration:none;
-  background-color:#ffffff07;
-  box-shadow:0 0 10px #00000050;
-  transition:350ms ease-in;
+  background-color:#1F2327;
+  box-shadow: inset 0 0 1rem #00000030, 0 0 .33rem #00000050 ;
+  transition:150ms ease-in;
 }
 .linkList a:hover,a:focus{
   transition:80ms;
-  background-color:#ffffff30;
-  color:#eee;
-  border-color:#aaa;
-  box-shadow:10px 20px 5px #00000050;
-  transform:translatex(3.5rem) translatey(-.9rem);
+  background-color:#3d4043;
+  color:#fff;
+  transform:translatex(1.5rem) translatey(-.25rem);
+}
+#dis:hover, #dis:focus{
+  box-shadow: inset 0 0 4rem #5662F630,inset 0 0 .5rem #5662F6,-1.5rem 2rem 18px #00000050;
+  border-color:#b6bbfa;
+}
+#hh:hover, #hh:focus{
+  box-shadow: inset 0 0 4rem #FF713930,inset 0 0 .5rem #FF7139,-1.5rem 2rem 18px #00000050;
+  border-color:#fcb79b;
+}
+#mi:hover, #mi:focus{
+  box-shadow: inset 0 0 4rem #B4E90030,inset 0 0 .5rem #B4E900,-1.5rem 2rem 18px #00000050;
+  border-color:#d0ec73;
+}
+#dia:hover, #dia:focus{
+  box-shadow: inset 0 0 4rem #dddddd30,inset 0 0 .5rem #ddd,-1.5rem 2rem 18px #00000050;
+  border-color:#ffffff;
+}
+#code:hover, #code:focus{
+  box-shadow: inset 0 0 4rem #2185D030,inset 0 0 .5rem #2185D0,-1.5rem 2rem 18px #00000050;
+  border-color:#92b5cf;
+}
+#pat:hover, #pat:focus{
+  box-shadow: inset 0 0 4rem #FF424D30,inset 0 0 .5rem #FF424D,-1.5rem 2rem 18px #00000050;
+  border-color:#fcb0b4;
+}
+#ss:hover, #ss:focus{
+  box-shadow: inset 0 0 4rem #4DB6AC30,inset 0 0 .5rem #4DB6AC,-1.5rem 2rem 18px #00000050;
+  border-color:#8eb4b0;
+}
+#red:hover, #red:focus{
+  box-shadow: inset 0 0 4rem #FF570030,inset 0 0 .5rem #FF5700,-1.5rem 2rem 18px #00000050;
+  border-color:#faae89;
+}
+#tdx:hover, #tdx:focus{
+  box-shadow: inset 0 0 4rem #3D63FD30,inset 0 0 .5rem #3D63FD,-1.5rem 2rem 18px #00000050;
+  border-color:#a2b4fd;
+}
+#gum:hover, #gum:focus{
+  box-shadow: inset 0 0 4rem #FF90E830,inset 0 0 .5rem #FF90E8,-1.5rem 2rem 18px #00000050;
+  border-color:#fae3f5;
+}
+#ko:hover, #ko:focus{
+  box-shadow: inset 0 0 4rem #12C3FF30,inset 0 0 .5rem #12C3FF,-1.5rem 2rem 18px #00000050;
+  border-color:#94e2fc;
+}
+#lib:hover, #lib:focus{
+  box-shadow: inset 0 0 4rem #F6C91530,inset 0 0 .5rem #F6C915,-1.5rem 2rem 18px #00000050;
+  border-color:#fae698;
+}
+#tg:hover, #tg:focus{
+  box-shadow: inset 0 0 4rem #5F2EEA30,inset 0 0 .5rem #5F2EEA,-1.5rem 2rem 18px #00000050;
+  border-color:#b6a2ec;
+}
+#os:hover, #os:focus{
+  box-shadow: inset 0 0 4rem #2081E230,inset 0 0 .5rem #2081E2,-1.5rem 2rem 18px #00000050;
+  border-color:#96bbe0;
+}
+#fou:hover, #fou:focus{
+  box-shadow: inset 0 0 4rem #dddddd30,inset 0 0 .5rem #ddd,-1.5rem 2rem 18px #00000050;
+  border-color:#ffffff;
+}
+#da:hover, #da:focus{
+  box-shadow: inset 0 0 4rem #00E59B30,inset 0 0 .5rem #00E59B,-1.5rem 2rem 18px #00000050;
+  border-color:#9ce4cd;
+}
+#gh:hover, #gh:focus{
+  box-shadow: inset 0 0 4rem #dddddd30,inset 0 0 .5rem #ddd,-1.5rem 2rem 18px #00000050;
+  border-color:#ffffff;
 }
 .tip{
   width:80vw;
@@ -92,23 +159,23 @@ a:hover,a:focus{color:#fff;}
     <p>All my links in one place, find my galleries, social networks, support platforms, etc... Just take a look :) </p>
   </div>
   <div class="linkList">
-    <a href="https://discord.gg/QjfjpH6ufk" rel="noopener nofollow" target="_blank" title="Discord">Discord server</a>
-    <a href="https://social.handholding.io/@Nesakko" rel="me noopener" target="_blank" title="Handholding Social">Fedi primary</a>
-    <a href="https://misskey.io/@Nesakko" rel="me noopener" target="_blank" title="Misskey">Fedi secondary</a>
-    <a href="https://pod.dapor.net/u/nesakko" rel="me noopener" target="_blank" title="Diaspora">Diaspora*</a>
-    <a href="https://codeberg.org/Nesakko" rel="noopener" target="_blank" title="Codeberg">Codeberg</a>
-    <a href="https://patreon.com/Nesakko" rel="noopener" target="_blank" title="Patreon">Patreon</a>
-    <a href="https://subscribestar.adult/nesakko" rel="noopener" target="_blank" title="Patreon">subscribestar.adult</a>
-    <a href="https://www.reddit.com/user/Nesakko" rel="noopener" target="_blank" title="Reddit">Reddit</a>
-    <a href="https://porn3dx.com/Nesakko" rel="noopener" target="_blank" title="Porn 3DX">Gallery on Porn3DX</a>
-    <a href="https://nesakko.gumroad.com" rel="noopener" target="_blank" title="Gumroad">Gumroad</a>
-    <a href="https://ko-fi.com/Nesakko" rel="noopener" target="_blank" title="Ko-fi">Ko-fi</a>
-    <a href="https://liberapay.com/Nesakko" rel="noopener" target="_blank" title="Liberapay">Liberapay</a>
-    <a href="https://token.gallery/address/Nesakko" rel="noopener" target="_blank" title="Token Gallery">Token Gallery</a>
-    <a href="https://opensea.io/nesakko" rel="noopener" target="_blank" title="OpenSea">OpenSea</a>
-    <a href="https://foundation.app/@Nesakko" rel="noopener" target="_blank" title="Foundation">Foundation</a>
-    <a href="https://www.deviantart.com/nesakko" rel="noopener" target="_blank" title="Deviant Art">Deviant Art</a>
-    <a href="https://github.com/Nesakko" rel="noopener nofollow" target="_blank" title="GitHub">GitHub</a>
+    <a id="dis" href="https://discord.gg/QjfjpH6ufk" rel="noopener nofollow" target="_blank" title="Discord">Discord server</a>
+    <a id="hh" href="https://social.handholding.io/@Nesakko" rel="me noopener" target="_blank" title="Handholding Social">Fedi primary</a>
+    <a id="mi" href="https://misskey.io/@Nesakko" rel="me noopener" target="_blank" title="Misskey">Fedi secondary</a>
+    <a id="dia" href="https://pod.dapor.net/u/nesakko" rel="me noopener" target="_blank" title="Diaspora">Diaspora*</a>
+    <a id="code" href="https://codeberg.org/Nesakko" rel="noopener" target="_blank" title="Codeberg">Codeberg</a>
+    <a id="pat" href="https://patreon.com/Nesakko" rel="noopener" target="_blank" title="Patreon">Patreon</a>
+    <a id="ss" href="https://subscribestar.adult/nesakko" rel="noopener" target="_blank" title="Patreon">subscribestar.adult</a>
+    <a id="red" href="https://www.reddit.com/user/Nesakko" rel="noopener" target="_blank" title="Reddit">Reddit</a>
+    <a id="tdx" href="https://porn3dx.com/Nesakko" rel="noopener" target="_blank" title="Porn 3DX">Gallery on Porn3DX</a>
+    <a id="gum" href="https://nesakko.gumroad.com" rel="noopener" target="_blank" title="Gumroad">Gumroad</a>
+    <a id="ko" href="https://ko-fi.com/Nesakko" rel="noopener" target="_blank" title="Ko-fi">Ko-fi</a>
+    <a id="lib" href="https://liberapay.com/Nesakko" rel="noopener" target="_blank" title="Liberapay">Liberapay</a>
+    <a id="tg" href="https://token.gallery/address/Nesakko" rel="noopener" target="_blank" title="Token Gallery">Token Gallery</a>
+    <a id="os" href="https://opensea.io/nesakko" rel="noopener" target="_blank" title="OpenSea">OpenSea</a>
+    <a id="fou" href="https://foundation.app/@Nesakko" rel="noopener" target="_blank" title="Foundation">Foundation</a>
+    <a id="da" href="https://www.deviantart.com/nesakko" rel="noopener" target="_blank" title="Deviant Art">Deviant Art</a>
+    <a id="gh" href="https://github.com/Nesakko" rel="noopener nofollow" target="_blank" title="GitHub">GitHub</a>
   </div>
   <div class="tip">
     <p>I also accept tips in cryptocurrencies</p>

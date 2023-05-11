@@ -11,8 +11,7 @@
 <meta name="robots" content="index,follow">
 <meta name="googlebot" content="index,follow">
 <meta name="rating" content="adult">
-<meta name="language" content="en">
-<meta name="keywords" content="links, nesakko, linktree, NesakkoLink, page, AllMyLinks, artist, 3D">
+<meta name="keywords" content="links, nesakko, linktree, NesakkoLink, page, AllMyLinks, artist, 3D, lewd, adult, 3dx">
 <meta property="og:title" content="Nesakko's links">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://links.nesakko.xyz">
@@ -20,10 +19,10 @@
 <meta name="twitter:title" content="Nesakko's links">
 <meta name="twitter:description" content="All my links in one place, find my galleries, social networks, support platforms, etc.">
 <style>
-*{
-  color:#ccc;
-  text-align:center;
+:root{
+  --shad: #00000040;
 }
+*{color:#ccc; text-align:center;}
 body{
   background-color:#191d21;
   font-family:verdana,sans-serif;
@@ -34,119 +33,106 @@ header{
   overflow:hidden;
   top:0;
   left:0;
-  width:100vw;
-  background-color:#000;
+  width:100%;
+  background-color:#000000;
 }
-main{
-  margin-top:1rem;
-}
-footer{
-  font-size:0.8rem;
-}
-a{
+main{margin:1rem;}
+a:hover,a:focus,abbr:hover{
   color:#fff;
+  text-shadow: 0 0 .75rem #f84eb7;
+  outline-offset:.25rem;
 }
-a:hover,a:focus{color:#fff;}
 .linkList{
-  margin:3rem auto;
+  margin:1.5rem auto;
   width:75vw;
-  max-width:600px;
+  max-width:650px;
 }
-.linkList a{
+.linkList div{padding: .2rem 1.5rem;}
+.linkList div a{
   display:block;
-  border-radius:1rem;
-  border:2px solid;
-  border-color:#333;
+  text-align: center;
+  border-radius:.5rem;
+  border: .25rem #333333;
+  border-style: solid;
   cursor:pointer;
-  margin:1rem 0;
-  padding :1rem 0;
-  color: #ccc;
+  padding:.75rem 0;
+  color: #6a7680;
   text-decoration:none;
   background-color:#1F2327;
-  box-shadow: inset 0 0 1rem #00000030, 0 0 .33rem #00000050 ;
-  transition:150ms ease-in;
+  transition:300ms linear;
+  rotate: X -180deg;
 }
-.linkList a:hover,a:focus{
-  transition:80ms;
-  background-color:#3d4043;
+.linkList div:hover a, a:focus{
+  border-style: groove ridge ridge groove;
+  transition:150ms ease-in; 
   color:#fff;
-  transform:translatex(1.5rem) translatey(-.25rem);
+  text-shadow: none;
+  transform:rotateX(-180deg) translateX(1rem) scale(1.075) translateY(-.7rem);
 }
-#dis:hover, #dis:focus{
-  box-shadow: inset 0 0 .5rem #5662F6cc, 0 0 5rem #5662F685, inset 0 0 5rem #5662F655,-1.5rem 2rem 1.5rem #00000040;
-  border-color:#b6bbfa;
-}
-#hh:hover, #hh:focus{
-  box-shadow: inset 0 0 .5rem #FF7139cc, 0 0 5rem #FF713985, inset 0 0 5rem #FF713955,-1.5rem 2rem 1.5rem #00000040;
-  border-color:#fcb79b;
-}
-#mi:hover, #mi:focus{
-  box-shadow: inset 0 0 .5rem #B4E900cc, 0 0 5rem #B4E90085, inset 0 0 5rem #B4E90055,-1.5rem 2rem 1.5rem #00000040;
-  border-color:#d0ec73;
-}
-#dia:hover, #dia:focus{
-  box-shadow: inset 0 0 .5rem #ddddddcc, 0 0 5rem #dddddd85, inset 0 0 5rem #dddddd55,-1.5rem 2rem 1.5rem #00000040;
-  border-color:#ffffff;
-}
-#code:hover, #code:focus{
-  box-shadow: inset 0 0 .5rem #2185D0cc, 0 0 5rem #2185D085, inset 0 0 5rem #2185D055,-1.5rem 2rem 1.5rem #00000040;
-  border-color:#92b5cf;
-}
-#pat:hover, #pat:focus{
-  box-shadow: inset 0 0 .5rem #FF424Dcc, 0 0 5rem #FF424D85, inset 0 0 5rem #FF424D55,-1.5rem 2rem 1.5rem #00000040;
-  border-color:#fcb0b4;
-}
-#ss:hover, #ss:focus{
-  box-shadow: inset 0 0 .5rem #4DB6ACcc, 0 0 5rem #4DB6AC85, inset 0 0 5rem #4DB6AC55,-1.5rem 2rem 1.5rem #00000040;
-  border-color:#8eb4b0;
-}
-#red:hover, #red:focus{
-  box-shadow: inset 0 0 .5rem #FF5700cc, 0 0 5rem #FF570085, inset 0 0 5rem #FF570055,-1.5rem 2rem 1.5rem #00000040;
-  border-color:#faae89;
-}
-#tdx:hover, #tdx:focus{
-  box-shadow: inset 0 0 .5rem #3D63FDcc, 0 0 5rem #3D63FD85, inset 0 0 5rem #3D63FD55,-1.5rem 2rem 1.5rem #00000040;
-  border-color:#a2b4fd;
-}
-#gum:hover, #gum:focus{
-  box-shadow: inset 0 0 .5rem #FF90E8cc, 0 0 5rem #FF90E885, inset 0 0 5rem #FF90E855,-1.5rem 2rem 1.5rem #00000040;
-  border-color:#fae3f5;
-}
-#ko:hover, #ko:focus{
-  box-shadow: inset 0 0 .5rem #12C3FFcc, 0 0 5rem #12C3FF85, inset 0 0 5rem #12C3FF55,-1.5rem 2rem 1.5rem #00000040;
-  border-color:#94e2fc;
-}
-#lib:hover, #lib:focus{
-  box-shadow: inset 0 0 .5rem #F6C915cc, 0 0 5rem #F6C91585, inset 0 0 5rem #F6C91555,-1.5rem 2rem 1.5rem #00000040;
-  border-color:#fae698;
-}
-#tg:hover, #tg:focus{
-  box-shadow: inset 0 0 .5rem #5F2EEAcc, 0 0 5rem #5F2EEA85, inset 0 0 5rem #5F2EEA55,-1.5rem 2rem 1.5rem #00000040;
-  border-color:#b6a2ec;
-}
-#os:hover, #os:focus{
-  box-shadow: inset 0 0 .5rem #2081E2cc, 0 0 5rem #2081E285, inset 0 0 5rem #2081E255,-1.5rem 2rem 1.5rem #00000040;
-  border-color:#96bbe0;
-}
-#fou:hover, #fou:focus{
-  box-shadow: inset 0 0 .5rem #ddddddcc, 0 0 5rem #dddddd85, inset 0 0 5rem #dddddd55,-1.5rem 2rem 1.5rem #00000040;
-  border-color:#ffffff;
-}
-#da:hover, #da:focus{
-  box-shadow: inset 0 0 .5rem #00E59Bcc, 0 0 5rem #00E59B85, inset 0 0 5rem #00E59B55,-1.5rem 2rem 1.5rem #00000040;
-  border-color:#9ce4cd;
-}
-#gh:hover, #gh:focus{
-  box-shadow: inset 0 0 .5rem #ddddddcc, 0 0 5rem #dddddd85, inset 0 0 5rem #dddddd55,-1.5rem 2rem 1.5rem #00000040;
-  border-color:#ffffff;
+
+@media screen and (max-width: 800px){
+  .linkList div a{
+    display:block;
+    border: .25rem #333333;
+    border-style: solid;
+    color: #a9becf;
+    background-color:#1F2327;
+    transition: none;
+    rotate: none;
+  }
+  .linkList div:hover a, a:focus{
+    border-style: solid;
+    color:#fff;
+    text-shadow: none;
+    transition: none;
+    transform: none;
+  }
+  .dc:hover a:hover,.dc a:focus{border-color:#b6bbfa;}
+  .hh:hover a:hover,.hh a:focus{border-color:#fcb79b;}
+  .mi:hover a:hover,.mi a:focus{border-color:#d0ec73;}
+  .di:hover a:hover,.di a:focus{border-color:#ffffff;}
+  .cb:hover a:hover,.cb a:focus{border-color:#92b5cf;}
+  .pt:hover a:hover,.pt a:focus{border-color:#fcb0b4;}
+  .ss:hover a:hover,.ss a:focus{border-color:#8eb4b0;}
+  .rd:hover a:hover,.rd a:focus{border-color:#faae89;}
+  .dx:hover a:hover,.dx a:focus{border-color:#a2b4fd;}
+  .gr:hover a:hover,.gr a:focus{border-color:#fae3f5;}
+  .kf:hover a:hover,.kf a:focus{border-color:#94e2fc;}
+  .lp:hover a:hover,.lp a:focus{border-color:#fae698;}
+  .tg:hover a:hover,.tg a:focus{border-color:#b6a2ec;}
+  .os:hover a:hover,.os a:focus{border-color:#96bbe0;}
+  .fd:hover a:hover,.fd a:focus{border-color:#ffffdd;}
+  .da:hover a:hover,.da a:focus{border-color:#9ce4cd;}
+  .gl:hover a:hover,.gl a:focus{border-color:#fae0bc;}
+  .pf:hover a:hover,.pf a:focus{border-color:#e0d7a2;}
+  .gh:hover a:hover,.gh a:focus{border-color:#f5f4f5;}
 }
 .tip{
   width:80vw;
-  margin:2rem auto;
+  margin:1rem auto;
   font-size:0.9rem;
-  font-weight:400;
+  font-weight:500;
   word-wrap:break-word;
 }
+.dc:hover a,.dc a:focus{border-color:#b6bbfa; box-shadow:inset 0 0 .5rem #5662F6aa,0 0 5rem #5662F685,inset 0 0 3.5rem #5662F655,-1.5rem 2rem 1.5rem var(--shad);}
+.hh:hover a,.hh a:focus{border-color:#fcb79b; box-shadow:inset 0 0 .5rem #FF7139aa,0 0 5rem #FF713985,inset 0 0 3.5rem #FF713955,-1.5rem 2rem 1.5rem var(--shad);}
+.mi:hover a,.mi a:focus{border-color:#d0ec73; box-shadow:inset 0 0 .5rem #B4E900aa,0 0 5rem #B4E90085,inset 0 0 3.5rem #B4E90055,-1.5rem 2rem 1.5rem var(--shad);}
+.di:hover a,.di a:focus{border-color:#ffffff; box-shadow:inset 0 0 .5rem #ddddddaa,0 0 5rem #dddddd85,inset 0 0 3.5rem #dddddd55,-1.5rem 2rem 1.5rem var(--shad);}
+.cb:hover a,.cb a:focus{border-color:#92b5cf; box-shadow:inset 0 0 .5rem #2185D0aa,0 0 5rem #2185D085,inset 0 0 3.5rem #2185D055,-1.5rem 2rem 1.5rem var(--shad);}
+.pt:hover a,.pt a:focus{border-color:#fcb0b4; box-shadow:inset 0 0 .5rem #FF424Daa,0 0 5rem #FF424D85,inset 0 0 3.5rem #FF424D55,-1.5rem 2rem 1.5rem var(--shad);}
+.ss:hover a,.ss a:focus{border-color:#8eb4b0; box-shadow:inset 0 0 .5rem #4DB6ACaa,0 0 5rem #4DB6AC85,inset 0 0 3.5rem #4DB6AC55,-1.5rem 2rem 1.5rem var(--shad);}
+.rd:hover a,.rd a:focus{border-color:#faae89; box-shadow:inset 0 0 .5rem #FF5700aa,0 0 5rem #FF570085,inset 0 0 3.5rem #FF570055,-1.5rem 2rem 1.5rem var(--shad);}
+.dx:hover a,.dx a:focus{border-color:#a2b4fd; box-shadow:inset 0 0 .5rem #3D63FDaa,0 0 5rem #3D63FD85,inset 0 0 3.5rem #3D63FD55,-1.5rem 2rem 1.5rem var(--shad);}
+.gr:hover a,.gr a:focus{border-color:#fae3f5; box-shadow:inset 0 0 .5rem #FF90E8aa,0 0 5rem #FF90E885,inset 0 0 3.5rem #FF90E855,-1.5rem 2rem 1.5rem var(--shad);}
+.kf:hover a,.kf a:focus{border-color:#94e2fc; box-shadow:inset 0 0 .5rem #12C3FFaa,0 0 5rem #12C3FF85,inset 0 0 3.5rem #12C3FF55,-1.5rem 2rem 1.5rem var(--shad);}
+.lp:hover a,.lp a:focus{border-color:#fae698; box-shadow:inset 0 0 .5rem #F6C915aa,0 0 5rem #F6C91585,inset 0 0 3.5rem #F6C91555,-1.5rem 2rem 1.5rem var(--shad);}
+.tg:hover a,.tg a:focus{border-color:#b6a2ec; box-shadow:inset 0 0 .5rem #5F2EEAaa,0 0 5rem #5F2EEA85,inset 0 0 3.5rem #5F2EEA55,-1.5rem 2rem 1.5rem var(--shad);}
+.os:hover a,.os a:focus{border-color:#96bbe0; box-shadow:inset 0 0 .5rem #2081E2aa,0 0 5rem #2081E285,inset 0 0 3.5rem #2081E255,-1.5rem 2rem 1.5rem var(--shad);}
+.fd:hover a,.fd a:focus{border-color:#ffffdd; box-shadow:inset 0 0 .5rem #ffffaaaa,0 0 5rem #ffffaa85,inset 0 0 3.5rem #ffffaa55,-1.5rem 2rem 1.5rem var(--shad);}
+.da:hover a,.da a:focus{border-color:#9ce4cd; box-shadow:inset 0 0 .5rem #00E59Baa,0 0 5rem #00E59B85,inset 0 0 3.5rem #00E59B55,-1.5rem 2rem 1.5rem var(--shad);}
+.gl:hover a,.gl a:focus{border-color:#fae0bc; box-shadow:inset 0 0 .5rem #FCA326aa,0 0 5rem #FCA32685,inset 0 0 3.5rem #FCA32655,-1.5rem 2rem 1.5rem var(--shad);}
+.pf:hover a,.pf a:focus{border-color:#e0d7a2; box-shadow:inset 0 0 .5rem #e4c40faa,0 0 5rem #e4c40f85,inset 0 0 3.5rem #e4c40f55,-1.5rem 2rem 1.5rem var(--shad);}
+.gh:hover a,.gh a:focus{border-color:#f5f4f5; box-shadow:inset 0 0 .5rem #c3afd0aa,0 0 5rem #c3afd085,inset 0 0 3.5rem #c3afd055,-1.5rem 2rem 1.5rem var(--shad);}
 </style>
 </head>
 <body>
@@ -159,23 +145,25 @@ a:hover,a:focus{color:#fff;}
     <p>All my links in one place, find my galleries, social networks, support platforms, etc... Just take a look :) </p>
   </div>
   <div class="linkList">
-    <a id="dis" href="https://discord.gg/QjfjpH6ufk" rel="noopener nofollow" target="_blank" title="Discord">Discord server</a>
-    <a id="hh" href="https://social.handholding.io/@Nesakko" rel="me noopener" target="_blank" title="Handholding Social">Fedi primary</a>
-    <a id="mi" href="https://misskey.io/@Nesakko" rel="me noopener" target="_blank" title="Misskey">Fedi secondary</a>
-    <a id="dia" href="https://pod.dapor.net/u/nesakko" rel="me noopener" target="_blank" title="Diaspora">Diaspora*</a>
-    <a id="code" href="https://codeberg.org/Nesakko" rel="noopener" target="_blank" title="Codeberg">Codeberg</a>
-    <a id="pat" href="https://patreon.com/Nesakko" rel="noopener" target="_blank" title="Patreon">Patreon</a>
-    <a id="ss" href="https://subscribestar.adult/nesakko" rel="noopener" target="_blank" title="Patreon">subscribestar.adult</a>
-    <a id="red" href="https://www.reddit.com/user/Nesakko" rel="noopener" target="_blank" title="Reddit">Reddit</a>
-    <a id="tdx" href="https://porn3dx.com/Nesakko" rel="noopener" target="_blank" title="Porn 3DX">Gallery on Porn3DX</a>
-    <a id="gum" href="https://nesakko.gumroad.com" rel="noopener" target="_blank" title="Gumroad">Gumroad</a>
-    <a id="ko" href="https://ko-fi.com/Nesakko" rel="noopener" target="_blank" title="Ko-fi">Ko-fi</a>
-    <a id="lib" href="https://liberapay.com/Nesakko" rel="noopener" target="_blank" title="Liberapay">Liberapay</a>
-    <a id="tg" href="https://token.gallery/address/Nesakko" rel="noopener" target="_blank" title="Token Gallery">Token Gallery</a>
-    <a id="os" href="https://opensea.io/nesakko" rel="noopener" target="_blank" title="OpenSea">OpenSea</a>
-    <a id="fou" href="https://foundation.app/@Nesakko" rel="noopener" target="_blank" title="Foundation">Foundation</a>
-    <a id="da" href="https://www.deviantart.com/nesakko" rel="noopener" target="_blank" title="Deviant Art">Deviant Art</a>
-    <a id="gh" href="https://github.com/Nesakko" rel="noopener nofollow" target="_blank" title="GitHub">GitHub</a>
+    <div class="dc"><a href="https://discord.gg/QjfjpH6ufk" rel="noopener nofollow" target="_blank" title="Discord">Discord server</a></div>
+    <div class="hh"><a href="https://social.handholding.io/@Nesakko" rel="me noopener" target="_blank" title="Handholding Social">Fedi primary</a></div>
+    <div class="mi"><a href="https://misskey.io/@Nesakko" rel="me noopener" target="_blank" title="Misskey">Fedi secondary</a></div>
+    <div class="pf"><a href="https://pixelfed.de/@Nesakko" rel="me noopener" target="_blank" title="pixelfed">Pixelfed</a></div>
+    <div class="di"><a href="https://pod.dapor.net/u/nesakko" rel="me noopener" target="_blank" title="Diaspora">Diaspora*</a></div>
+    <div class="cb"><a href="https://codeberg.org/Nesakko" rel="noopener" target="_blank" title="Codeberg">Codeberg</a></div>
+    <div class="da"><a href="https://www.deviantart.com/nesakko" rel="noopener" target="_blank" title="Deviant Art">Deviant Art</a></div>
+    <div class="lp"><a href="https://liberapay.com/Nesakko" rel="noopener" target="_blank" title="Liberapay">Liberapay</a></div>
+    <div class="gr"><a href="https://nesakko.gumroad.com" rel="noopener" target="_blank" title="Gumroad">Gumroad</a></div>
+    <div class="kf"><a href="https://ko-fi.com/Nesakko" rel="noopener" target="_blank" title="Ko-fi">Ko-fi</a></div>
+    <div class="ss"><a href="https://subscribestar.adult/nesakko" rel="noopener" target="_blank" title="subscribestar.adult">subscribestar.adult</a></div>
+    <div class="pt"><a href="https://patreon.com/Nesakko" rel="noopener" target="_blank" title="Patreon">Patreon</a></div>
+    <div class="dx"><a href="https://porn3dx.com/Nesakko" rel="noopener" target="_blank" title="Porn 3DX">Gallery on Porn3DX</a></div>
+    <div class="tg"><a href="https://token.gallery/address/Nesakko" rel="noopener" target="_blank" title="Token Gallery">Token Gallery</a></div>
+    <div class="rd"><a href="https://www.reddit.com/user/Nesakko" rel="noopener" target="_blank" title="Reddit">Reddit</a></div>
+    <div class="os"><a href="https://opensea.io/nesakko" rel="noopener" target="_blank" title="OpenSea">OpenSea</a></div>
+    <div class="fd"><a href="https://foundation.app/@Nesakko" rel="noopener" target="_blank" title="Foundation">Foundation</a></div>
+    <div class="gl"><a href="https://gitlab.com/Nesakko" rel="noopener" target="_blank" title="GitLab">GitLab</a></div>
+    <div class="gh"><a href="https://github.com/Nesakko" rel="noopener" target="_blank" title="GitHub">GitHub</a></div>
   </div>
   <div class="tip">
     <p>I also accept tips in cryptocurrencies</p>
@@ -186,38 +174,40 @@ a:hover,a:focus{color:#fff;}
   </div>
 </main>
 <footer>
-  <p><em>This links page was made with my two left hands, get the source code <a href="https://codeberg.org/Nesakko/MyLinksPage" target="_blank" title="source code on Codeberg"> here</a></em></p>
-  <p><em>Site hosted on <a href="http://codeberg.page" target="_blank" title="Codeberg page">Codeberg page</a></em></p>
+  <p><em>This links page was made with my two left hands, get the source code <a href="https://codeberg.org/Nesakko/MyLinksPage" target="_blank" tabindex="99" title="source code on Codeberg"> here</a></em></p>
+  <p><em>Site hosted on <a href="http://codeberg.page" target="_blank" tabindex="100" title="Codeberg page">Codeberg page</a></em></p>
   <p><em>&#x2661; 2023 by Nesakko. Copying is an act of love. Please copy.</em></p>
 </footer>
 <script type="application/ld+json">
 {
-"@context": "https://schema.org",
-"@type": ["Person", "webpage"],
-"jobTitle": "3D artist",
-"name": "Nesakko",
-"url":
-[
-  "http://links.nesakko.xyz",
-  "https://discord.gg/QjfjpH6ufk",
-  "https://social.handholding.io/@Nesakko",
-  "https://misskey.io/@Nesakko",
-  "https://pod.dapor.net/u/nesakko",
-  "https://codeberg.org/Nesakko",
-  "https://patreon.com/Nesakko",
-  "https://www.reddit.com/user/Nesakko",
-  "https://porn3dx.com/Nesakko",
-  "https://nesakko.gumroad.com",
-  "https://ko-fi.com/Nesakko",
-  "https://liberapay.com/Nesakko",
-  "https://token.gallery/address/Nesakko",
-  "https://opensea.io/nesakko",
-  "https://foundation.app/@Nesakko",
-  "https://www.deviantart.com/nesakko",
-  "https://github.com/Nesakko"
-  "https://subscribestar.adult/nesakko"
-],
-"copyrightYear": "2023"
+ "@context": "https://schema.org",
+ "@type": ["Person", "webpage"],
+ "jobTitle": "3D artist",
+ "name": "Nesakko",
+ "url":
+  [
+   "http://links.nesakko.xyz",
+   "https://discord.gg/QjfjpH6ufk",
+   "https://social.handholding.io/@Nesakko",
+   "https://misskey.io/@Nesakko",
+   "https://pixelfed.de/@Nesakko",
+   "https://pod.dapor.net/u/nesakko",
+   "https://codeberg.org/Nesakko",
+   "https://patreon.com/Nesakko",
+   "https://www.reddit.com/user/Nesakko",
+   "https://porn3dx.com/Nesakko",
+   "https://nesakko.gumroad.com",
+   "https://ko-fi.com/Nesakko",
+   "https://liberapay.com/Nesakko",
+   "https://token.gallery/address/Nesakko",
+   "https://opensea.io/nesakko",
+   "https://foundation.app/@Nesakko",
+   "https://www.deviantart.com/nesakko",
+   "https://github.com/Nesakko",
+   "https://subscribestar.adult/nesakko",
+   "https://gitlab.com/Nesakko"
+  ],
+ "copyrightYear": "2023"
 }
 </script>
 </body>

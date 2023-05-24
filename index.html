@@ -28,6 +28,7 @@ a, abbr{
   transition-duration:.3s,.05s;
   transition-timing-function:ease;
 }
+
 body{
   background-color:#191d21;
   font-family:sans-serif;
@@ -44,12 +45,29 @@ header{
 main{
   margin:1rem;
 }
-.gp{
+#ctrl, #ctrl.z{
+  opacity: 0;
   position:fixed;
-  display: inline;
-  bottom: 5%;
-  right: 10%;
-  list-style: none;
+  bottom:3%;
+  right:3%;
+  padding:2rem;
+  color: #ff0000;
+  background-color:#1F232750;
+  border-radius:2rem;
+  border-style:groove ridge ridge groove;
+  border-color:#f060da;
+  box-shadow:inset 0 0 .25rem #f656db55,0 0 1rem #f656db20,inset 0 0 1rem #f656db10;
+  user-select:none;
+  transform:rotateZ(4deg);
+  transition-property:opacity, transform, box-shadow, border-color;
+  transition-duration:.33s, .05s, .15s, .25s;
+  transition-timing-function:linear, ease-in, ease-in-out, ease-in-out;
+}
+#ctrl:hover, #ctrl.z{
+  background-color:#1F2327aa;
+  border-color:#f5d5f0;
+  box-shadow:inset 0 0 1rem #f16fdc55,0 0 5rem #f16fdc55,inset 0 0 6rem #f16fdcaa;
+  transform:scale(1.1) rotateZ(-4deg);
 }
 a:hover,a:focus,abbr:hover{
   color:#fff;
@@ -129,7 +147,7 @@ a:hover,a:focus,abbr:hover{
 <header>
   <h1>Nesakko's links</h1>
 </header>
-<main>
+<main id="element">
   <div>
     <p >All links may contain or be related to <abbr title="Not Safe For Work">NSFW</abbr> or adult content.</p>
     <p>All my links in one place, find my galleries, social networks, support platforms, etc... Just take a look :) </p>
@@ -155,8 +173,11 @@ a:hover,a:focus,abbr:hover{
     <div class="l f" id="gl"><a tabindex="18" rel="noopener" title="GitLab" href="https://gitlab.com/Nesakko">GitLab</a></div>
     <div class="l f" id="gh"><a tabindex="19" rel="noopener" title="GitHub" href="https://github.com/Nesakko">GitHub</a></div>
   </div>
-  <div class="gp">
-    test
+  <div id="ctrl">
+    <p>Up/Down : Select</p>
+    <p>A : Open</p>
+    <p>X : Open in new tab</p>
+    <p>B : Cancel selection</p>
   </div>
 </main>
 <footer>
@@ -199,12 +220,15 @@ a:hover,a:focus,abbr:hover{
 <script>
   const li = Array.from(document.querySelectorAll('.mli a'));
   const src = document.querySelector("src");
+  const ctrl = document.getElementById("ctrl");
   let activeIndex = -1;
-  let BtnP = false;
+  let btnP = false;
   
   window.addEventListener('gamepadconnected', (e) => {
     const gp = e.gamepad;
-    if (gp.index === 0){window.requestAnimationFrame(checkGamepadState);}
+    if (gp.index === 0){
+      window.requestAnimationFrame(checkGamepad);
+    }
     console.info("Gamepad connected : " + e.gamepad.id);
   });
 
@@ -213,10 +237,11 @@ a:hover,a:focus,abbr:hover{
     rmActive();
   });
 
-  function checkGamepadState() {
+  function checkGamepad() {
     const gamepad = navigator.getGamepads()[0];
     if (gamepad){ handleGamepadInput({ gamepad });}
-    window.requestAnimationFrame(checkGamepadState);
+
+    window.requestAnimationFrame(checkGamepad);
   }
 
   function setActive(index) {
@@ -224,64 +249,81 @@ a:hover,a:focus,abbr:hover{
       if (i === index) {link.classList.add('active');}
       else {link.classList.remove('active');}
     });
+    showCTRL();
   }
 
   document.addEventListener('click', function() {
     rmActive();
+    hideCTRL();
   });
 
   function rmActive() {
-    if (!BtnP) {
-      for (let i = 0; i < li.length; i++) {
-        li[i].classList.remove('active');
-      }
-    BtnP = true;
+    for (let i = 0; i < li.length; i++) {
+      li[i].classList.remove('active');
     }
   }
 
-  function navUp() {
-    if (!BtnP) {
+  function showCTRL(){
+    ctrl.style.opacity= '1';
+  }
+
+  function hideCTRL(){
+    ctrl.style.opacity= '0';
+  }
+
+  function zoomCTRL(){
+    if (!btnP){
+      ctrl.classList.add('z');
+      btnP = true;
+    }
+  }
+
+  function navUp(){
+    if (!btnP){
       activeIndex = (activeIndex - 1 + li.length) % li.length;
       setActive(activeIndex);
       console.log(activeIndex);
-      BtnP = true;
+      btnP = true;
     }
   }
 
-  function navDown() {
-    if (!BtnP) {
+  function navDown(){
+    if (!btnP){
       activeIndex = (activeIndex + 1 ) % li.length;
       setActive(activeIndex);
       console.log(activeIndex);
-      BtnP = true;
+      btnP = true;
     }
   }
 
-  function openActive() {
-    if (!BtnP) {
+  function openActive(){
+    if (!btnP){
       li[activeIndex].click();
-      BtnP = true;
+      btnP = true;
     }
   }
 
-  function getSource() {
-    if (!BtnP) {
+  function getSource(){
+    if (!btnP){
       const href = document.querySelector(".src").getAttribute('href');
       window.open(href);
-      BtnP = true;
+      btnP = true;
     }
   }
 
-  function newTabActive() {
-    if (!BtnP) {
+  function newTabActive(){
+    if (!btnP){
       window.open(li[activeIndex], '_blank');
-      BtnP = true;
+      btnP = true;
     }
   }
 
-  function handleGamepadInput(e) {
+  function handleGamepadInput(e){
     const gamepad = e.gamepad;
     if (!gamepad) {return;}
+
+    const axes = gamepad.axes;
+    const leftX = axes[1]
 
     const btn = gamepad.buttons;
     const upBtn = btn[12].pressed;
@@ -290,16 +332,35 @@ a:hover,a:focus,abbr:hover{
     const cancelBtn = btn[1].pressed;
     const sqrBtn = btn[2].pressed;
     const startBtn = btn[9].pressed;
+    //const zoomBtn = btn[7].pressed;
 
     if (upBtn) {navUp();}
-    else if (gamepad.axes[1] < -0.2) {navUp();}
-    else if (downBtn){navDown();}
-    else if (gamepad.axes[1] > 0.2) {navDown();}
-    else if (selectBtn){openActive();}
-    else if (cancelBtn){rmActive(); console.info("Selection canceled");}
-    else if (sqrBtn){newTabActive();console.info("Opened in new tab");}
-    else if (startBtn){getSource(); console.info("Start pressed");}
-    else {BtnP = false;}
+    else if (leftX < -0.33) {
+        navUp();
+      }
+    else if (downBtn){
+      navDown();
+    }
+    else if (leftX > 0.33) {
+      navDown();
+    }
+    else if (selectBtn){
+      openActive();
+    }
+    else if (cancelBtn){
+      rmActive();
+      console.info("Selection canceled");
+    }
+    else if (sqrBtn){
+      newTabActive();
+      console.info("Opened in new tab");
+    }
+    else if (startBtn){
+      getSource();
+    }
+    //else if (zoomBtn){zoomCTRL();console.info("zooming");}
+    else {
+      btnP = false;}
   }
 </script>
 </body>

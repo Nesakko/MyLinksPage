@@ -44,6 +44,13 @@ header{
 main{
   margin:1rem;
 }
+.gp{
+  position:fixed;
+  display: inline;
+  bottom: 5%;
+  right: 10%;
+  list-style: none;
+}
 a:hover,a:focus,abbr:hover{
   color:#fff;
   text-shadow: 0 0 .75rem #f84eb7;
@@ -74,7 +81,8 @@ a:hover,a:focus,abbr:hover{
   transition-timing-function: ease-in,ease-in,ease-out,ease-in,linear;
   rotate:X -180deg;
   transform:none;
-  }
+  filter: none;
+}
 .l:hover a, .l a:focus, .l a.active{
   border-style:groove ridge ridge groove;
   transition-property:rotate,transform,color,border-color,box-shadow;
@@ -147,6 +155,9 @@ a:hover,a:focus,abbr:hover{
     <div class="l f" id="gl"><a tabindex="18" rel="noopener" title="GitLab" href="https://gitlab.com/Nesakko">GitLab</a></div>
     <div class="l f" id="gh"><a tabindex="19" rel="noopener" title="GitHub" href="https://github.com/Nesakko">GitHub</a></div>
   </div>
+  <div class="gp">
+    test
+  </div>
 </main>
 <footer>
   <p><em>li page made with two left hands, get the source code <a class="src" href="https://codeberg.org/Nesakko/MylinksPage" rel="noopener" tabindex="99" title="source code on Codeberg"> here</a></em></p>
@@ -161,7 +172,7 @@ a:hover,a:focus,abbr:hover{
  "name": "Nesakko",
  "url":
   [
-   "http://li.nesakko.xyz",
+   "http://links.nesakko.xyz",
    "https://discord.gg/QjfjpH6ufk",
    "https://social.handholding.io/@Nesakko",
    "https://misskey.io/@Nesakko",
@@ -273,11 +284,11 @@ a:hover,a:focus,abbr:hover{
     if (!gamepad) {return;}
 
     const btn = gamepad.buttons;
-    const upBtn = btn[13].pressed;
-    const downBtn = btn[14].pressed;
+    const upBtn = btn[12].pressed;
+    const downBtn = btn[13].pressed;
     const selectBtn = btn[0].pressed;
     const cancelBtn = btn[1].pressed;
-    const sqrBtn = btn[3].pressed;
+    const sqrBtn = btn[2].pressed;
     const startBtn = btn[9].pressed;
 
     if (upBtn) {navUp();}
@@ -286,7 +297,7 @@ a:hover,a:focus,abbr:hover{
     else if (gamepad.axes[1] > 0.2) {navDown();}
     else if (selectBtn){openActive();}
     else if (cancelBtn){rmActive(); console.info("Selection canceled");}
-    else if (sqrBtn){newTabActive();}
+    else if (sqrBtn){newTabActive();console.info("Opened in new tab");}
     else if (startBtn){getSource(); console.info("Start pressed");}
     else {BtnP = false;}
   }

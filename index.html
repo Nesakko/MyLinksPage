@@ -7,32 +7,27 @@
 <link rel="canonical" href="https://links.nesakko.xyz">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="All my links in one place, find my galleries, social networks, support platforms, etc.">
-<meta property="og:description" content="All my links in one place, find my galleries, social networks, support platforms, etc.">
 <meta name="robots" content="index,follow">
 <meta name="googlebot" content="index,follow">
 <meta name="rating" content="adult">
-<meta name="keywords" content="links, nesakko, linktree, page, AllMylinks, artist, 3D, lewd, adult, 3dx">
 <meta property="og:title" content="Nesakko's links">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://links.nesakko.xyz">
+<meta property="og:description" content="All my links in one place, find my galleries, social networks, support platforms, etc.">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nesakko's links">
 <meta name="twitter:description" content="All my links in one place, find my galleries, social networks, support platforms, etc.">
 <style>
-*{
-  color:#ccc;
-  text-align:center;
-}
+*{color:#ccc; text-align:center;}
 a, abbr{
   transition-property:text-shadow,color;
   transition-duration:.3s,.05s;
   transition-timing-function:ease;
 }
-
 body{
   background-color:#191d21;
   font-family:sans-serif;
-  font-weight:800;
+  font-weight:600;
   margin:0;
 }
 header{
@@ -42,29 +37,29 @@ header{
   width:100%;
   background-color:#000;
 }
-main{
-  margin:1rem;
-}
-#ctrl, #ctrl.z{
+main{margin:1rem;}
+#ctrl{
   opacity: 0;
   position:fixed;
   bottom:3%;
   right:3%;
   padding:2rem;
   color: #ff0000;
-  background-color:#1F232750;
+  background-color:#6b2a6130;
   border-radius:2rem;
   border-style:groove ridge ridge groove;
   border-color:#f060da;
   box-shadow:inset 0 0 .25rem #f656db55,0 0 1rem #f656db20,inset 0 0 1rem #f656db10;
   user-select:none;
   transform:rotateZ(4deg);
+  backdrop-filter: blur(6px);
   transition-property:opacity, transform, box-shadow, border-color;
   transition-duration:.33s, .05s, .15s, .25s;
   transition-timing-function:linear, ease-in, ease-in-out, ease-in-out;
+  aspect-ratio: 1;
 }
-#ctrl:hover, #ctrl.z{
-  background-color:#1F2327aa;
+#ctrl:hover{
+  background-color:#c54cb350;
   border-color:#f5d5f0;
   box-shadow:inset 0 0 1rem #f16fdc55,0 0 5rem #f16fdc55,inset 0 0 6rem #f16fdcaa;
   transform:scale(1.1) rotateZ(-4deg);
@@ -79,8 +74,7 @@ a:hover,a:focus,abbr:hover{
   width:75vw;
   max-width:700px;
 }
-.l{padding:.1rem 3.5rem;
-}
+.l{padding:.125rem 2.5rem; margin: 0 .1rem;}
 .l a{
   display:block;
   text-align:center;
@@ -110,7 +104,7 @@ a:hover,a:focus,abbr:hover{
   color:#fff;
   text-shadow:none;
   rotate:X 0deg;
-  transform:scale(1.1) translateY(-.5rem);
+  transform:scale(1.075) translateY(-.5rem);
 }
 .f{
   filter:none;
@@ -173,15 +167,10 @@ a:hover,a:focus,abbr:hover{
     <div class="l f" id="gl"><a tabindex="18" rel="noopener" title="GitLab" href="https://gitlab.com/Nesakko">GitLab</a></div>
     <div class="l f" id="gh"><a tabindex="19" rel="noopener" title="GitHub" href="https://github.com/Nesakko">GitHub</a></div>
   </div>
-  <div id="ctrl">
-    <p>Up/Down : Select</p>
-    <p>A : Open</p>
-    <p>X : Open in new tab</p>
-    <p>B : Cancel selection</p>
-  </div>
+  <div id="ctrl"></div>
 </main>
 <footer>
-  <p><em>li page made with two left hands, get the source code <a class="src" href="https://codeberg.org/Nesakko/MylinksPage" rel="noopener" tabindex="99" title="source code on Codeberg"> here</a></em></p>
+  <p><em>link page made with two left hands, get the source code <a class="src" href="https://codeberg.org/Nesakko/MylinksPage" rel="noopener" tabindex="99" title="source code on Codeberg"> here</a></em></p>
   <p><em>Site hosted on <a href="http://codeberg.page" rel="noopener" tabindex="100" title="Codeberg page">Codeberg page</a></em></p>
   <p><em>&#x2661; 2023 by Nesakko. Copying is an act of love. Please copy.</em></p>
 </footer>
@@ -223,6 +212,7 @@ a:hover,a:focus,abbr:hover{
   const ctrl = document.getElementById("ctrl");
   let activeIndex = -1;
   let btnP = false;
+  let ctrlA = true;
   
   window.addEventListener('gamepadconnected', (e) => {
     const gp = e.gamepad;
@@ -230,6 +220,7 @@ a:hover,a:focus,abbr:hover{
       window.requestAnimationFrame(checkGamepad);
     }
     console.info("Gamepad connected : " + e.gamepad.id);
+    ctrl.innerHTML = '<p>Up/Down : Select</p><p>A : Open</p><p>X : Open in new tab</p><p>B : Cancel selection</p>';
   });
 
   window.addEventListener('gamepaddisconnected', (e) => {
@@ -239,20 +230,30 @@ a:hover,a:focus,abbr:hover{
 
   function checkGamepad() {
     const gamepad = navigator.getGamepads()[0];
-    if (gamepad){ handleGamepadInput({ gamepad });}
-
+    if (gamepad){
+      handleGamepadInput({ gamepad });}
     window.requestAnimationFrame(checkGamepad);
   }
 
   function setActive(index) {
     li.forEach((link, i) => {
-      if (i === index) {link.classList.add('active');}
-      else {link.classList.remove('active');}
+      if (i === index) {
+        link.classList.add('active');
+        showCTRL();
+      }
+      else {
+        link.classList.remove('active');
+      }
     });
-    showCTRL();
   }
 
   document.addEventListener('click', function() {
+    rmActive();
+    hideCTRL();
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.defaultPrevented) { return }
     rmActive();
     hideCTRL();
   });
@@ -265,17 +266,12 @@ a:hover,a:focus,abbr:hover{
 
   function showCTRL(){
     ctrl.style.opacity= '1';
+    ctrlA = true;
   }
 
   function hideCTRL(){
     ctrl.style.opacity= '0';
-  }
-
-  function zoomCTRL(){
-    if (!btnP){
-      ctrl.classList.add('z');
-      btnP = true;
-    }
+    ctrlA = false;
   }
 
   function navUp(){
@@ -319,48 +315,28 @@ a:hover,a:focus,abbr:hover{
   }
 
   function handleGamepadInput(e){
-    const gamepad = e.gamepad;
-    if (!gamepad) {return;}
+    const axes = e.gamepad.axes;
+    const leftY = axes[1];
 
-    const axes = gamepad.axes;
-    const leftX = axes[1]
-
-    const btn = gamepad.buttons;
+    const btn = e.gamepad.buttons;
     const upBtn = btn[12].pressed;
     const downBtn = btn[13].pressed;
     const selectBtn = btn[0].pressed;
     const cancelBtn = btn[1].pressed;
     const sqrBtn = btn[2].pressed;
-    const startBtn = btn[9].pressed;
-    //const zoomBtn = btn[7].pressed;
+    const triBtn = btn[3].pressed;
+    const startBtn = btn[9].pressed; 
 
     if (upBtn) {navUp();}
-    else if (leftX < -0.33) {
-        navUp();
-      }
-    else if (downBtn){
-      navDown();
-    }
-    else if (leftX > 0.33) {
-      navDown();
-    }
-    else if (selectBtn){
-      openActive();
-    }
-    else if (cancelBtn){
-      rmActive();
-      console.info("Selection canceled");
-    }
-    else if (sqrBtn){
-      newTabActive();
-      console.info("Opened in new tab");
-    }
-    else if (startBtn){
-      getSource();
-    }
-    //else if (zoomBtn){zoomCTRL();console.info("zooming");}
-    else {
-      btnP = false;}
+    else if (leftY < -0.33) {navUp();}
+    else if (downBtn){navDown();}
+    else if (leftY > 0.33) {navDown();}
+    else if (selectBtn){openActive();}
+    else if (cancelBtn){rmActive();console.info("Selection canceled");}
+    else if (sqrBtn){newTabActive();console.info("Opened in new tab");}
+    else if (triBtn){console.info("Triangle");}
+    else if (startBtn){getSource();}
+    else {btnP = false;}
   }
 </script>
 </body>

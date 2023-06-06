@@ -88,18 +88,16 @@ a:hover,a:focus,abbr:hover{
   text-decoration:none;
   background-color:#1F2327;
   transition-property:rotate,transform,color,border-color,box-shadow;
-  transition-duration:.4s, .3s, .5s, .28s, .25s, 5s;
-  transition-delay:.05s, .1s, .1s, .1s, 0s, 0s;
+  transition-duration:.4s, .3s, .5s, .28s, .25s;
+  transition-delay:.05s, .1s, .1s, 0s, 0s;
   transition-timing-function: ease-in,ease-in,ease-out,ease-in,linear;
   rotate:X -180deg;
-  transform:none;
-  filter: none;
 }
 .l:hover a, .l a:focus, .l a.active{
   border-style:groove ridge ridge groove;
   transition-property:rotate,transform,color,border-color,box-shadow;
   transition-duration:.3s, .1s, 2s, .1s, .15s;
-  transition-delay:.05s, 0s, 0s, .15s, .2s;
+  transition-delay:.05s, 0s, 0s, .1s, .2s;
   transition-timing-function:ease-out,ease-out,ease-out,ease-out,linear;
   color:#fff;
   text-shadow:none;
@@ -113,8 +111,92 @@ a:hover,a:focus,abbr:hover{
 }
 .f:hover{
   filter:blur(1rem) contrast(2);
-  transition-duration: 15s;
-  transition-delay: 2s;
+  transition-duration: 5s;
+  transition-delay: 5s;
+}
+.o input{
+  display: none;
+}
+.owo:before{
+  z-index: 0;
+  position: absolute;
+  content: "o";
+  transition: .2s;
+}
+.o input:checked + .owo:before{
+  font-weight: 400;
+  content: "o";
+}
+.uwu:before{
+  z-index: 1;
+  position: absolute;
+  opacity: 0;
+  content: "🍆";
+  transform: scale(.3) translateX(-32px) translateY(-10px);
+  transition: .2s ease-in;
+}
+.o input:checked ~ .uwu:before{
+  rotate: -90deg;
+  transform: scale(.7) translateX(4px) ;
+  opacity: 1;
+}
+.mar{
+  margin-left: 1.1rem;
+}
+
+.lk{
+  padding: .5rem 2.125rem .5rem .3rem;
+}
+
+.lk .look{
+  position: absolute;
+  transition-duration: .15s;
+  transition-delay: .1s;
+  transition-timing-function: ease-in;
+  opacity: 1;
+}
+
+.lk:hover .look{
+  transform: translateX(16px);
+  transition-duration: .15s;
+  transition-delay: 0s;
+  transition-timing-function: ease-out;
+  opacity: 0;
+}
+
+.lk .eye{
+  position: absolute;
+  transform: translateY(8px);
+  transition-duration: .15s;
+  transition-delay: 0s;
+  opacity: 0;
+  transition-timing-function: ease-in;
+  margin-left: 4px;
+}
+.lk:hover .eye{
+  transform: translateY(0);
+  transition-duration: .15s;
+  transition-delay: .15s;
+  transition-timing-function: ease-out;
+  opacity: 1;
+}
+.keur{
+  margin-right: 1.5rem;
+  cursor: pointer;
+}
+.keur input{
+  display: none;
+}
+.fire:before{
+  z-index: 0;
+  position: absolute;
+  content: "❤️";
+  transition: .25s;
+}
+.keur input:checked + .fire:before{
+  content: "❤️‍🔥";
+  transform: scale(2) translateY(-5px);
+  text-shadow: 0 -2px 1.5rem #fda90d;
 }
 #dc:hover a,#dc a:focus,#dc a.active{border-color:#b6bbfa; box-shadow:inset 0 0 .5rem #5662F6aa,0 0 5rem #5662F685,inset 0 0 3.5rem #5662F655;}
 #hh:hover a,#hh a:focus,#hh a.active{border-color:#fcb79b; box-shadow:inset 0 0 .5rem #FF7139aa,0 0 5rem #FF713985,inset 0 0 3.5rem #FF713955;}
@@ -139,14 +221,14 @@ a:hover,a:focus,abbr:hover{
 </head>
 <body>
 <header>
-  <h1>Nesakko's links</h1>
+  <h1>Nesakk<label class="o"><input type="checkbox"><span class="owo"></span><span class="uwu"></span></label><span class="mar">'s links</span></h1>
 </header>
 <main id="element">
-  <div>
+  <section>
     <p >All links may contain or be related to <abbr title="Not Safe For Work">NSFW</abbr> or adult content.</p>
-    <p>All my links in one place, find my galleries, social networks, support platforms, etc... Just take a look :) </p>
-  </div>
-  <div class="mli">
+    <p>All my links in one place, find my galleries, social networks, support platforms, etc... Just take a<span class="lk"><span class="look">look :)</span><span class="eye">👀</span></span></p>
+  </section>
+  <section class="mli">
     <div class="l f" id="dc"><a tabindex="1" rel="noopener nofollow" title="Discord" href="https://discord.gg/QjfjpH6ufk">Discord server</a></div>
     <div class="l f" id="hh"><a tabindex="2" rel="me noopener" title="Handholding Social"href="https://social.handholding.io/@Nesakko">Fedi primary</a></div>
     <div class="l f" id="mi"><a tabindex="3" rel="me noopener" title="Misskey" href="https://misskey.io/@Nesakko">Fedi secondary</a></div>
@@ -166,13 +248,13 @@ a:hover,a:focus,abbr:hover{
     <div class="l f" id="fd"><a tabindex="17" rel="noopener" title="Foundation" href="https://foundation.app/@Nesakko">Foundation</a></div>
     <div class="l f" id="gl"><a tabindex="18" rel="noopener" title="GitLab" href="https://gitlab.com/Nesakko">GitLab</a></div>
     <div class="l f" id="gh"><a tabindex="19" rel="noopener" title="GitHub" href="https://github.com/Nesakko">GitHub</a></div>
-  </div>
-  <div id="ctrl"></div>
+  </section>
+  <aside id="ctrl"></aside>
 </main>
 <footer>
-  <p><em>link page made with two left hands, get the source code <a class="src" href="https://codeberg.org/Nesakko/MylinksPage" rel="noopener" tabindex="99" title="source code on Codeberg"> here</a></em></p>
-  <p><em>Site hosted on <a href="http://codeberg.page" rel="noopener" tabindex="100" title="Codeberg page">Codeberg page</a></em></p>
-  <p><em>&#x2661; 2023 by Nesakko. Copying is an act of love. Please copy.</em></p>
+  <p><i>link page made with two left hands, get the source code <a class="src" href="https://codeberg.org/Nesakko/MylinksPage" rel="noopener" tabindex="99" title="source code on Codeberg"> here</a></i></p>
+  <p><i>Site hosted on <a href="http://codeberg.page" rel="noopener" tabindex="100" title="Codeberg page">Codeberg page</a></i></p>
+  <p><i><label class="keur"><input type="checkbox"><span class="fire"></span></label> 2023 by Nesakko. Copying is an act of love. Please copy.</i></p>
 </footer>
 <script type="application/ld+json">
 {

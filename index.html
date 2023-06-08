@@ -1,3 +1,7 @@
+<!--
+  Copyright © 2023 Nesakko
+  This work is free. You can redistribute it and/or modify it under the terms of the Do What The Fuck You Want To Public License, Version 2, as published by Sam Hocevar. See the LICENCE file for more details.
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +22,10 @@
 <meta name="twitter:title" content="Nesakko's links">
 <meta name="twitter:description" content="All my links in one place, find my galleries, social networks, support platforms, etc.">
 <style>
-*{color:#ccc; text-align:center;}
+*{
+  color:#ccc;
+  text-align:center;
+}
 a, abbr{
   transition-property:text-shadow,color;
   transition-duration:.3s,.05s;
@@ -37,7 +44,9 @@ header{
   width:100%;
   background-color:#000;
 }
-main{margin:1rem;}
+main{
+  margin:1rem;
+}
 #ctrl{
   opacity: 0;
   position:fixed;
@@ -46,15 +55,15 @@ main{margin:1rem;}
   padding:2rem;
   color: #ff0000;
   background-color:#6b2a6130;
-  border-radius:2rem;
+  border-radius:32px;
   border-style:groove ridge ridge groove;
   border-color:#f060da;
-  box-shadow:inset 0 0 .25rem #f656db55,0 0 1rem #f656db20,inset 0 0 1rem #f656db10;
+  box-shadow:inset 0 0 4px #f656db55,0 0 32px #f656db20,inset 0 0 16px #f656db10;
   user-select:none;
   transform:rotateZ(4deg);
   backdrop-filter: blur(6px);
   transition-property:opacity, transform, box-shadow, border-color;
-  transition-duration:.33s, .05s, .15s, .25s;
+  transition-duration:.1s, .05s, .15s, .25s;
   transition-timing-function:linear, ease-in, ease-in-out, ease-in-out;
   aspect-ratio: 1;
 }
@@ -74,35 +83,38 @@ a:hover,a:focus,abbr:hover{
   width:75vw;
   max-width:700px;
 }
-.l{padding:.125rem 2.5rem; margin: 0 .1rem;}
+.l{
+  padding:.125rem 2.5rem;
+  margin: 0 .1rem;
+}
 .l a{
   display:block;
   text-align:center;
   border-radius:.5rem;
-  border:.25rem;
+  border:3px;
   border-color:#333;
   border-style:solid;
   cursor:pointer;
   padding:.75rem 0;
-  color:#6a7680;
+  color:#3a4046;
   text-decoration:none;
   background-color:#1F2327;
-  transition-property:rotate,transform,color,border-color,box-shadow;
-  transition-duration:.4s, .3s, .5s, .28s, .25s;
-  transition-delay:.05s, .1s, .1s, 0s, 0s;
-  transition-timing-function: ease-in,ease-in,ease-out,ease-in,linear;
   rotate:X -180deg;
+  transition-property:rotate,transform,color,border-color,box-shadow;
+  transition-duration:.4s, .3s, .1s, .2s, .2s;
+  transition-delay:.05s, .1s, 0s, 0s, 0s;
+  transition-timing-function: ease-in,ease-in,linear,ease-out,linear;
 }
 .l:hover a, .l a:focus, .l a.active{
   border-style:groove ridge ridge groove;
-  transition-property:rotate,transform,color,border-color,box-shadow;
-  transition-duration:.3s, .1s, 2s, .1s, .15s;
-  transition-delay:.05s, 0s, 0s, .1s, .2s;
-  transition-timing-function:ease-out,ease-out,ease-out,ease-out,linear;
   color:#fff;
   text-shadow:none;
   rotate:X 0deg;
   transform:scale(1.075) translateY(-.5rem);
+  transition-property:rotate,transform,color,border-color,box-shadow;
+  transition-duration:.25s, .05s, .1s, .2s, .2s;
+  transition-delay:.05s, 0s, .2s, .2s, .2s;
+  transition-timing-function:ease-out,ease-out,linear,ease-in,linear;
 }
 .f{
   filter:none;
@@ -115,7 +127,9 @@ a:hover,a:focus,abbr:hover{
   transition-delay: 5s;
 }
 .o input{
-  display: none;
+  opacity: 0;
+  width: 0;
+  margin: 0;
 }
 .owo:before{
   z-index: 0;
@@ -143,11 +157,9 @@ a:hover,a:focus,abbr:hover{
 .mar{
   margin-left: 1.1rem;
 }
-
 .lk{
   padding: .5rem 2.125rem .5rem .3rem;
 }
-
 .lk .look{
   position: absolute;
   transition-duration: .15s;
@@ -155,7 +167,6 @@ a:hover,a:focus,abbr:hover{
   transition-timing-function: ease-in;
   opacity: 1;
 }
-
 .lk:hover .look{
   transform: translateX(16px);
   transition-duration: .15s;
@@ -163,7 +174,6 @@ a:hover,a:focus,abbr:hover{
   transition-timing-function: ease-out;
   opacity: 0;
 }
-
 .lk .eye{
   position: absolute;
   transform: translateY(8px);
@@ -185,18 +195,19 @@ a:hover,a:focus,abbr:hover{
   cursor: pointer;
 }
 .keur input{
-  display: none;
+  opacity: 0;
+  width: 0;
 }
 .fire:before{
   z-index: 0;
   position: absolute;
   content: "❤️";
-  transition: .25s;
+  transition: .2s cubic-bezier(.5, -1.2, .95, .5);
 }
 .keur input:checked + .fire:before{
   content: "❤️‍🔥";
-  transform: scale(2) translateY(-5px);
-  text-shadow: 0 -2px 1.5rem #fda90d;
+  transform: scale(2) translateY(-.25rem);
+  text-shadow: 0 0 .5rem #fd510d, 0 0 1.5rem #fd8d0d, 0 0 3rem #ffed49;
 }
 #dc:hover a,#dc a:focus,#dc a.active{border-color:#b6bbfa; box-shadow:inset 0 0 .5rem #5662F6aa,0 0 5rem #5662F685,inset 0 0 3.5rem #5662F655;}
 #hh:hover a,#hh a:focus,#hh a.active{border-color:#fcb79b; box-shadow:inset 0 0 .5rem #FF7139aa,0 0 5rem #FF713985,inset 0 0 3.5rem #FF713955;}
@@ -223,7 +234,7 @@ a:hover,a:focus,abbr:hover{
 <header>
   <h1>Nesakk<label class="o"><input type="checkbox"><span class="owo"></span><span class="uwu"></span></label><span class="mar">'s links</span></h1>
 </header>
-<main id="element">
+<main>
   <section>
     <p >All links may contain or be related to <abbr title="Not Safe For Work">NSFW</abbr> or adult content.</p>
     <p>All my links in one place, find my galleries, social networks, support platforms, etc... Just take a<span class="lk"><span class="look">look :)</span><span class="eye">👀</span></span></p>
@@ -251,10 +262,12 @@ a:hover,a:focus,abbr:hover{
   </section>
   <aside id="ctrl"></aside>
 </main>
-<footer>
-  <p><i>link page made with two left hands, get the source code <a class="src" href="https://codeberg.org/Nesakko/MylinksPage" rel="noopener" tabindex="99" title="source code on Codeberg"> here</a></i></p>
-  <p><i>Site hosted on <a href="http://codeberg.page" rel="noopener" tabindex="100" title="Codeberg page">Codeberg page</a></i></p>
-  <p><i><label class="keur"><input type="checkbox"><span class="fire"></span></label> 2023 by Nesakko. Copying is an act of love. Please copy.</i></p>
+<footer style="font-size: .9rem;">
+<i>
+  <p>link page made with two left hands, get the source code <a class="src" href="https://codeberg.org/Nesakko/MylinksPage" rel="noopener" tabindex="99" title="source code on Codeberg"> here</a></p>
+  <p>Site hosted on <a href="http://codeberg.page" rel="noopener" tabindex="100" title="Codeberg page">Codeberg page</a></p>
+  <p><label class="keur"><input type="checkbox" tabindex="101"><span class="fire"></span></label> 2023 by Nesakko. Copying is an act of love. Please copy.</p>
+</i>
 </footer>
 <script type="application/ld+json">
 {

@@ -1,0 +1,13 @@
+
+/* Web developement */
+Author: Nesakko
+Email: nesakko [at] tutanota.com
+XMPP: me [at] nesakko.xyz
+Location: France
+
+/* Site */
+Creation date: 2021
+Last update: 2023
+Standards: HTML5, CSS3, JavaScript
+Software: VScode, Firefox
+Git repository: https://codeberg.org/Nesakko/MyLinksPage

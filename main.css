@@ -7,6 +7,10 @@
   color:#ccc;
   text-align:center;
 }
+::selection{
+  background-color:#4d15a8;
+  color: #ffffff;
+}
 a, abbr{
   transition-property:text-shadow,color;
   transition-duration:.3s,.05s;
@@ -14,19 +18,25 @@ a, abbr{
 }
 body{
   background-color:#14161a;
-  font-family:sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight:600;
   margin:0;
+}
+html{
+  scrollbar-color: #1e2129 #14161a;
 }
 header{
   overflow:hidden;
   top:0;
   left:0;
   width:100%;
-  background-color:#000;
+  background-color:#16181c;
 }
 main{
   margin:1rem;
+}
+.cont{
+  min-height: 100vh;
 }
 .mli{
   margin:1.5rem auto;
@@ -52,15 +62,19 @@ main{
   width: 0;
   margin: 0;
 }
+.o{
+  cursor: pointer;
+  margin-left: -4px;
+}
+.o input:checked + .owo:before{
+  font-weight: 400;
+  content: "o";
+}
 .owo:before{
   z-index: 0;
   position: absolute;
   content: "o";
   transition: .2s;
-}
-.o input:checked + .owo:before{
-  font-weight: 400;
-  content: "o";
 }
 .uwu:before{
   z-index: 1;
@@ -76,7 +90,7 @@ main{
   opacity: 1;
 }
 .mar{
-  margin-left: 1.1rem;
+  margin-left: 18px;
 }
 .lk{
   padding: .5rem 2.125rem .5rem .3rem;
@@ -130,37 +144,27 @@ main{
   transform: scale(2) translateY(-.25rem);
   text-shadow: 0 0 .5rem #fd510d, 0 0 1.5rem #fd8d0d, 0 0 3rem #ffed49;
 }
-hr{
-  border-color: #2a2f35;
-}
 footer{
   font-size: .9rem;
   font-style: italic;
+  position:relative;
+  margin: 0;
+  padding: 32px;
+  background-color: #16181c;
+}
+.im{
+  opacity: 0;
 }
 
-#dc a{border-color:#5662F6; background-color: #5662F655;}
-#hh a{border-color:#FF7139; background-color: #FF713955;}
-#mi a{border-color:#B4E900; background-color: #B4E90055;}
-#di a{border-color:#dddddd; background-color: #dddddd55;}
-#cb a{border-color:#2185D0; background-color: #2185D055;}
-#pt a{border-color:#FF424D; background-color: #FF424D55;}
-#ss a{border-color:#4DB6AC; background-color: #4DB6AC55;}
-#rd a{border-color:#FF5700; background-color: #FF570055;}
-#dx a{border-color:#3D63FD; background-color: #3D63FD55;}
-#gr a{border-color:#FF90E8; background-color: #FF90E855;}
-#kf a{border-color:#12C3FF; background-color: #12C3FF55;}
-#lp a{border-color:#F6C915; background-color: #F6C91555;}
-#tg a{border-color:#5F2EEA; background-color: #5F2EEA55;}
-#os a{border-color:#2081E2; background-color: #2081E255;}
-#fd a{border-color:#ffffaa; background-color: #ffffaa55;}
-#da a{border-color:#00E59B; background-color: #00E59B55;}
-#gl a{border-color:#FCA326; background-color: #FCA32655;}
-#pf a{border-color:#e4c40f; background-color: #e4c40f55;}
-#gh a{border-color:#c3afd0; background-color: #c3afd055;}
-#tw a{border-color:#1D9BF0; background-color: #1D9BF055;}
+#ls {
+  font-size: 1em;
+  background: #14161a;
+  color: #ccc;
+  border: none;
+}
 
-@media screen and (min-width: 1000px) {
-  #ctrl{
+#ctrl{
+  z-index: 1;
   opacity: 0;
   position:fixed;
   bottom:3%;
@@ -186,10 +190,33 @@ footer{
   box-shadow:inset 0 0 1rem #f16fdc55,0 0 5rem #f16fdc55,inset 0 0 6rem #f16fdcaa;
   transform:scale(1.1) rotateZ(-4deg);
 }
+
+#dc a{border-color:#5662F6; background-color: #5662F655;}
+#hh a{border-color:#FF7139; background-color: #FF713955;}
+#mi a{border-color:#B4E900; background-color: #B4E90055;}
+#di a{border-color:#dddddd; background-color: #dddddd55;}
+#cb a{border-color:#2185D0; background-color: #2185D055;}
+#pt a{border-color:#FF424D; background-color: #FF424D55;}
+#ss a{border-color:#4DB6AC; background-color: #4DB6AC55;}
+#rd a{border-color:#FF5700; background-color: #FF570055;}
+#dx a{border-color:#3D63FD; background-color: #3D63FD55;}
+#gr a{border-color:#FF90E8; background-color: #FF90E855;}
+#kf a{border-color:#12C3FF; background-color: #12C3FF55;}
+#lp a{border-color:#F6C915; background-color: #F6C91555;}
+#tg a{border-color:#5F2EEA; background-color: #5F2EEA55;}
+#os a{border-color:#2081E2; background-color: #2081E255;}
+#fd a{border-color:#ffffaa; background-color: #ffffaa55;}
+#da a{border-color:#00E59B; background-color: #00E59B55;}
+#gl a{border-color:#FCA326; background-color: #FCA32655;}
+#pf a{border-color:#e4c40f; background-color: #e4c40f55;}
+#gh a{border-color:#c3afd0; background-color: #c3afd055;}
+#tw a{border-color:#1D9BF0; background-color: #1D9BF055;}
+
+@media screen and (min-width: 1000px) {
 a:hover,a:focus,abbr:hover{
   color:#fff;
   text-shadow: 0 0 .75rem #f84eb7;
-  outline-offset:.25rem;
+  outline:none;
 }
 .l{
   margin: .5rem;
@@ -202,7 +229,6 @@ a:hover,a:focus,abbr:hover{
   text-align:center;
   border-radius:.5rem;
   border:3px;
-  border-color:#333;
   border-style:solid;
   cursor:pointer;
   padding:.75rem 0;
@@ -215,7 +241,6 @@ a:hover,a:focus,abbr:hover{
   transition-timing-function: ease-in,ease-in,linear,ease-out,linear;
 }
 .l:hover a, .l a:focus, .l a.active{
-  border-style:groove ridge ridge groove;
   color:#fff;
   text-shadow:none;
   rotate:X 0deg;
@@ -225,18 +250,34 @@ a:hover,a:focus,abbr:hover{
   transition-delay:.05s, 0s, .2s, .2s, .2s;
   transition-timing-function:ease-out,ease-out,linear,ease-in,linear;
 }
-.f{
-filter:none;
-transition-duration: 5s;
-transition-delay: .1s;
+:is(#dc, #hh, #mi, #di, #cb, #pt, #ss, #rd, #dx, #gr, #kf, #lp, #tg, #os, #fd, #da, #gl, #pf, #gh, #tw) a {
+  border-color:#333;
+  background: #1f2327a0;
+  backdrop-filter: blur(20px);
 }
-.f:hover{
-filter:blur(1rem) contrast(2);
-transition-duration: 5s;
-transition-delay: 5s;
+.bg{
+  position: sticky;  
+  z-index: -1;
+  display: grid;
+  justify-content: center;
+  justify-items: center;
 }
-#dc a, #hh a, #mi a, #di a, #cb a, #pt a, #ss a, #rd a, #dx a, #gr a,
-  #kf a, #lp a, #tg a, #os a, #fd a, #da a, #gl a, #pf a, #gh a, #tw a{border-color:#333;background: #1F2327;}
+.im{
+  position: fixed;
+  top: -10vh;
+  height: 120vh;
+  width: 120vh;
+  transition: .5s ease-in-out .3s;
+}
+.l:hover .im, .l:focus-within .im{
+  opacity: 1;
+}
+#dc .im {
+  background: center / contain border-box no-repeat url(./logos/Discord.svg);
+}
+#cb .im {
+  background: center / contain border-box no-repeat url(./logos/codeberg.svg);
+}
 
 #dc:hover a,#dc a:focus,#dc a.active{border-color:#b6bbfa; box-shadow:inset 0 0 .5rem #5662F6aa,0 0 5rem #5662F685,inset 0 0 3.5rem #5662F655;}
 #hh:hover a,#hh a:focus,#hh a.active{border-color:#fcb79b; box-shadow:inset 0 0 .5rem #FF7139aa,0 0 5rem #FF713985,inset 0 0 3.5rem #FF713955;}

@@ -5,7 +5,7 @@
 
 // interactions and elements related to gamepad usage
 
-const li = Array.from(document.querySelectorAll('.mli a'));
+const li = Array.from(document.querySelectorAll('.la'));
 const src = document.querySelector("src");
 const ctrl = document.getElementById("ctrl");
 let activeIndex = -1;
@@ -113,6 +113,13 @@ function newTab(){
 }
 
 function handleGamepadInput(e){
+  const now = performance.now();
+  const action = now - action;
+
+  if (action < 100) {
+    return;
+  }
+
   const axes = e.gamepad.axes;
   const lY = axes[1];
 
@@ -133,4 +140,5 @@ function handleGamepadInput(e){
   else if (X){newTab();console.info("Opened in new tab");}
   else if (start){getSource();}
   else {btnP = false;}
+  
 }

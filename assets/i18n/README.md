@@ -1,7 +1,7 @@
 # Translations
 
-Chaques fichiers json, correspond à une langue.  
-Chaque lignes contients deux infos. La première, l'ID dans le document HTML, le second correspond à la traduction :
+Each json file corresponds to a language.  
+Each line contains two pieces of information. The first is the ID in the HTML document, the second is the translation :
 
 ```json
 // en.json

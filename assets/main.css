@@ -212,7 +212,8 @@ footer{
   left: 0;
   width: 100%;
   max-height: 100vh;
-  overflow: scroll;
+  overflow-x: scroll;
+  overflow-y: auto;
   background-color: #181b22;
   display: none;
   color: #fff;
@@ -261,6 +262,7 @@ a:hover,a:focus,abbr:hover{
 }
 .l{
   margin: .5rem;
+  z-index: -1;
 }
 .mli{
   max-width: 700px;
@@ -282,6 +284,7 @@ a:hover,a:focus,abbr:hover{
   transition-timing-function: ease-in,ease-in,linear,ease-out,linear;
 }
 .l:hover > a, .l > a:focus, .l > a.active{
+  z-index: 1;
   color:#fff;
   text-shadow:none;
   rotate:X 0deg;

@@ -70,6 +70,12 @@ document.addEventListener('DOMContentLoaded', function() {
     toggleOptions();
 	});
 
+  selectedOption.addEventListener('click', function(e) {
+    e.stopPropagation();
+    toggleOptions();
+	});
+
+
 	options.addEventListener('click', function(e) {
     e.stopPropagation();
     if (e.target.classList.contains('optLang')) {

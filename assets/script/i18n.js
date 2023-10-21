@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
     fi: 'Suomi',
     fr: 'Français',
     hu: 'Magyar',
+    it: 'Italiano',
     jp: '日本語',
     ko: '한국어',
     lt: 'Lietuvių',

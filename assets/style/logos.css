@@ -1,0 +1,40 @@
+/*
+  Copyright © 2023 Nesakko
+  This work is free. You can redistribute it and/or modify it under the terms of the Do What The Fuck You Want To Public License, Version 2, as published by Sam Hocevar. See the LICENSE file for more details.
+*/
+
+.bg{
+  position: sticky;  
+  z-index: -1;
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+}
+.im{
+  position: fixed;
+  top: -10vh;
+  height: 120vh;
+  width: 120vh;
+  opacity: 0;
+  transition: opacity .6s ease-in-out;
+  --im: center / contain border-box no-repeat;
+}
+.l:hover .im, .l:focus-within .im{
+  opacity: 1;
+  transition: opacity .6s ease-in-out .75s;
+}
+#bdc .im {
+  background: var(--im) url(../logos/Discord.svg);
+}
+#bcb .im {
+  background: var(--im) url(../logos/codeberg.svg);
+}
+#bpf .im {
+  background: var(--im) url(../logos/PixelfedGlow.svg);
+}
+#bmi .im {
+  background: var(--im) url(../logos/Misskey.svg);
+}

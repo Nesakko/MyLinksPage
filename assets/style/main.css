@@ -1,6 +1,6 @@
 /*
   Copyright © 2023 Nesakko
-  This work is free. You can redistribute it and/or modify it under the terms of the Do What The Fuck You Want To Public License, Version 2, as published by Sam Hocevar. See the LICENCE file for more details.
+  This work is free. You can redistribute it and/or modify it under the terms of the Do What The Fuck You Want To Public License, Version 2, as published by Sam Hocevar. See the LICENSE file for more details.
 */
 
 *{
@@ -17,10 +17,20 @@ a, abbr{
     color .05s ease;
 }
 body{
-  background-color:#14161a;
+  background-color:#14161a !important;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight:600;
   margin:0;
+  height: 100vh;
+  animation: .6s ease-in-out fade;
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 html{
   scrollbar-color: #1e2129 #14161a;
@@ -36,9 +46,15 @@ header{
 main{
   margin:1rem;
 }
-.cont{
+footer{
+  font-size: .9rem;
+  font-style: italic;
   position: sticky;
-  min-height: 100vh;
+  margin: 0;
+  width: 100%;
+  padding: 32px;
+  background-color: #16181c;
+  top: 100%;
 }
 .mli{
   margin:1.5rem auto;
@@ -46,9 +62,13 @@ main{
 }
 .l{
   margin: 1rem;
+  display: block;
+}
+.un{
+  display: none;
 }
 .l > a{
-  display:block;
+  display: block;
   text-align:center;
   border-radius:.5rem;
   border:none;
@@ -93,31 +113,6 @@ main{
 .mar{
   margin-left: 18px;
 }
-.lk{
-  padding: .5rem 2.125rem .5rem .3rem;
-}
-.lk .look{
-  position: absolute;
-  transition: .15s ease-in .1s;
-  opacity: 1;
-}
-.lk:hover .look{
-  transform: translateX(16px);
-  transition: .15 ease-out;
-  opacity: 0;
-}
-.lk .eye{
-  position: absolute;
-  transform: translateY(8px);
-  transition: .15s ease-in 0s;
-  opacity: 0;
-  margin-left: 4px;
-}
-.lk:hover .eye{
-  transform: translateY(0);
-  transition: .15s ease-out .15s;
-  opacity: 1;
-}
 .keur{
   margin-right: 1.5rem;
   cursor: pointer;
@@ -137,25 +132,19 @@ main{
   transform: scale(2) translateY(-.25rem);
   text-shadow: 0 0 .5rem #fd510d, 0 0 1.5rem #fd8d0d, 0 0 3rem #ffed49;
 }
-footer{
-  font-size: .9rem;
-  font-style: italic;
-  position:relative;
-  margin: 0;
-  padding: 32px;
-  background-color: #16181c;
-}
+
 .im{
   opacity: 0;
 }
-
 #ls {
-  font-size: 1em;
+  font-size: 1rem;
   background: #14161a;
   color: #ccc;
   border: none;
 }
-
+.eye {
+  display: none;
+}
 #ctrl{
   z-index: 1;
   opacity: 0;
@@ -249,6 +238,43 @@ footer{
 #bgh a{background-color: #2a252e;}
 #btw a{background-color: #1D9BF0;}
 
+.l:nth-child(2n+1) > a {
+  animation: .75s ease left;
+}
+.l:nth-child(2n) > a {
+  animation: .75s ease right;
+}
+
+@keyframes left {
+  0% {
+    transform: translateX(-200vw) scale(2, 0);
+  }
+  30% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0) scale(1, 1);
+  }
+}
+@keyframes right {
+  0% {
+    opacity: 0;
+    transform: translateX(200vw) scale(2, 0);
+  }
+  30% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0) scale(1, 1);
+  }
+}
+
 @media screen and (min-width: 1000px) {
 a:hover,a:focus,abbr:hover{
   color:#fff;
@@ -269,7 +295,7 @@ a:hover,a:focus,abbr:hover{
   border-style:solid;
   cursor:pointer;
   padding:.75rem 0;
-  color:#3a4046;
+  color:#3a4046 !important;
   text-decoration:none;
   rotate:X -180deg;
   transition:
@@ -280,7 +306,7 @@ a:hover,a:focus,abbr:hover{
     box-shadow .2s linear;
 }
 .l:hover > a, .l > a:focus, .l > a.active{
-  color:#fff;
+  color:#fff !important;
   text-shadow:none;
   rotate:X 0deg;
   transform:scale(1.075) translateY(-.5rem);
@@ -296,37 +322,6 @@ a:hover,a:focus,abbr:hover{
   background: #1f2327a0;
   backdrop-filter: blur(16px);
 }
-.bg{
-  position: sticky;  
-  z-index: -1;
-  display: grid;
-  justify-content: center;
-  justify-items: center;
-}
-.im{
-  position: fixed;
-  top: -10vh;
-  height: 120vh;
-  width: 120vh;
-  transition: opacity .6s ease-in-out;
-  --im: center / contain border-box no-repeat;
-}
-.l:hover .im, .l:focus-within .im{
-  opacity: 1;
-  transition: opacity .6s ease-in-out .75s;
-}
-#bdc .im {
-  background: var(--im) url(./logos/Discord.svg);
-}
-#bcb .im {
-  background: var(--im) url(./logos/codeberg.svg);
-}
-#bpf .im {
-  background: var(--im) url(./logos/PixelfedGlow_opti.svg);
-}
-#bmi .im {
-  background: var(--im) url(./logos/Misskey.svg);
-}
 .dropLang {
   display: flex;
   width: 320px;
@@ -339,7 +334,36 @@ a:hover,a:focus,abbr:hover{
   width: 100%;
   max-height: 50vh;
 }
-
+.lk{
+  padding: .5rem 2.125rem .5rem .3rem;
+}
+.lk > .look{
+  position: absolute;
+  transition: .15s ease-in .1s;
+  opacity: 1;
+}
+.lk:hover > .look{
+  transform: translateX(16px);
+  opacity: 0;
+  transition:
+    transform .15s ease-in,
+    opacity .15s ease-in;
+}
+.lk > .eye{
+  display: inline;
+  position: absolute;
+  transform: translateY(8px);
+  opacity: 0;
+  margin-left: 4px;
+  transition:
+    transform .15s ease-in 0s,
+    opacity .15s ease-in 0s;
+}
+.lk:hover > .eye{
+  transform: translateY(0);
+  transition: .15s ease-out .15s;
+  opacity: 1;
+}
 #bdc:hover a,#bdc a:focus,#bdc a.active{border-color:#b6bbfa; box-shadow:inset 0 0 .5rem #5662F6aa,0 0 5rem #5662F685,inset 0 0 3.5rem #5662F655;}
 #bhh:hover a,#bhh a:focus,#bhh a.active{border-color:#fcb79b; box-shadow:inset 0 0 .5rem #FF7139aa,0 0 5rem #FF713985,inset 0 0 3.5rem #FF713955;}
 #bmi:hover a,#bmi a:focus,#bmi a.active{border-color:#d0ec73; box-shadow:inset 0 0 .5rem #B4E900aa,0 0 5rem #B4E90085,inset 0 0 3.5rem #B4E90055;}

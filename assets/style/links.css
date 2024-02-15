@@ -1,0 +1,120 @@
+/*
+  Copyright © 2023 Nesakko
+  This work is free. You can redistribute it and/or modify it under the terms of the Do What The Fuck You Want To Public License, Version 2, as published by Sam Hocevar. See the LICENSE file for more details.
+*/
+
+/* Links style sheet */
+
+.l{
+  margin: 1rem;
+  display: block;
+}
+
+.l > a{
+  display: block;
+  text-align:center;
+  border-radius:.5rem;
+  border:none;
+  cursor:pointer;
+  padding:.75rem 0;
+  color:#fff;
+  text-decoration:none;
+  background-color:#1F2327;
+}
+
+#bdc a{background-color: #5662F6;}
+#bhh a{background-color: #FF7139;}
+#bmi a{background-color: #B4E900;}
+#bdi a{background-color: #3f3f3f;}
+#bcb a{background-color: #2185D0;}
+#bpt a{background-color: #FF424D;}
+#bss a{background-color: #4DB6AC;}
+#brd a{background-color: #FF5700;}
+#bdx a{background-color: #3D63FD;}
+#bgr a{background-color: #FF90E8;}
+#bkf a{background-color: #12C3FF;}
+#blp a{background-color: #F6C915;}
+#btg a{background-color: #5F2EEA;}
+#bos a{background-color: #2081E2;}
+#bfd a{background-color: #168dee;}
+#bda a{background-color: #00E59B;}
+#bgl a{background-color: #FCA326;}
+#bpf a{background-color: #e4c40f;}
+#bgh a{background-color: #2a252e;}
+#btw a{background-color: #1D9BF0;}
+#bsk a{background-color: #0886fe;}
+
+
+@media screen and (min-width: 1000px) {
+  .l{
+    margin: .5rem;
+  }
+  .l > a{
+    display:block;
+    text-align:center;
+    border-radius:.5rem;
+    border:3px;
+    border-style:solid;
+    cursor:pointer;
+    padding:.75rem 0;
+    color:#3a4046 !important;
+    text-decoration:none;
+    rotate:X -180deg;
+    transition:
+      rotate .4s ease-in .05s,
+      transform .3s ease-in .1s,
+      color .1s linear,
+      border-color .2s ease-out,
+      box-shadow .2s linear;
+  }
+
+  .l:hover > a, .l > a:focus, .l > a.active{
+    color:#fff !important;
+    text-shadow:none;
+    rotate:X 0deg;
+    transform:scale(1.075) translateY(-.5rem);
+    transition:
+      rotate .25s ease-out .05s,
+      transform .05s ease-out,
+      color .1s linear .2s,
+      border-color .2s ease-in .2s,
+      box-shadow .2s linear .2s;
+  }
+
+  :is(#bdc, #bhh, #bmi, #bdi, #bcb, #bpt, #bss, #brd, #bdx, #bgr, #bkf, #blp, #btg, #bos, #bfd, #bda, #bgl, #bpf, #bgh, #btw, #bsk) a {
+    border-color:#333;
+    background: #1f2327a0;
+    backdrop-filter: blur(16px);
+  }
+
+  #bdc:hover a,#bdc a:focus,#bdc a.active{border-color:#b6bbfa; box-shadow:inset 0 0 .5rem #5662F655,0 0 5rem 5px #5662F655,inset 0 0 3.5rem #5662F655;}
+  #bhh:hover a,#bhh a:focus,#bhh a.active{border-color:#fcb79b; box-shadow:inset 0 0 .5rem #FF713955,0 0 5rem 5px #FF713955,inset 0 0 3.5rem #FF713955;}
+  #bmi:hover a,#bmi a:focus,#bmi a.active{border-color:#d0ec73; box-shadow:inset 0 0 .5rem #B4E90055,0 0 5rem 5px #B4E90055,inset 0 0 3.5rem #B4E90055;}
+  #bdi:hover a,#bdi a:focus,#bdi a.active{border-color:#ffffff; box-shadow:inset 0 0 .5rem #dddddd55,0 0 5rem 5px #dddddd55,inset 0 0 3.5rem #dddddd55;}
+  #bcb:hover a,#bcb a:focus,#bcb a.active{border-color:#92b5cf; box-shadow:inset 0 0 .5rem #2185D055,0 0 5rem 5px #2185D055,inset 0 0 3.5rem #2185D055;}
+  #bpt:hover a,#bpt a:focus,#bpt a.active{border-color:#fcb0b4; box-shadow:inset 0 0 .5rem #FF424D55,0 0 5rem 5px #FF424D55,inset 0 0 3.5rem #FF424D55;}
+  #bss:hover a,#bss a:focus,#bss a.active{border-color:#8eb4b0; box-shadow:inset 0 0 .5rem #4DB6AC55,0 0 5rem 5px #4DB6AC55,inset 0 0 3.5rem #4DB6AC55;}
+  #brd:hover a,#brd a:focus,#brd a.active{border-color:#faae89; box-shadow:inset 0 0 .5rem #FF570055,0 0 5rem 5px #FF570055,inset 0 0 3.5rem #FF570055;}
+  #bdx:hover a,#bdx a:focus,#bdx a.active{border-color:#a2b4fd; box-shadow:inset 0 0 .5rem #3D63FD55,0 0 5rem 5px #3D63FD55,inset 0 0 3.5rem #3D63FD55;}
+  #bgr:hover a,#bgr a:focus,#bgr a.active{border-color:#fae3f5; box-shadow:inset 0 0 .5rem #FF90E855,0 0 5rem 5px #FF90E855,inset 0 0 3.5rem #FF90E855;}
+  #bkf:hover a,#bkf a:focus,#bkf a.active{border-color:#94e2fc; box-shadow:inset 0 0 .5rem #12C3FF55,0 0 5rem 5px #12C3FF55,inset 0 0 3.5rem #12C3FF55;}
+  #blp:hover a,#blp a:focus,#blp a.active{border-color:#fae698; box-shadow:inset 0 0 .5rem #F6C91555,0 0 5rem 5px #F6C91555,inset 0 0 3.5rem #F6C91555;}
+  #btg:hover a,#btg a:focus,#btg a.active{border-color:#b6a2ec; box-shadow:inset 0 0 .5rem #5F2EEA55,0 0 5rem 5px #5F2EEA55,inset 0 0 3.5rem #5F2EEA55;}
+  #bos:hover a,#bos a:focus,#bos a.active{border-color:#96bbe0; box-shadow:inset 0 0 .5rem #2081E255,0 0 5rem 5px #2081E255,inset 0 0 3.5rem #2081E255;}
+  #bfd:hover a,#bfd a:focus,#bfd a.active{border-color:#ffffdd; box-shadow:inset 0 0 .5rem #ffffaa55,0 0 5rem 5px #ffffaa55,inset 0 0 3.5rem #ffffaa55;}
+  #bda:hover a,#bda a:focus,#bda a.active{border-color:#9ce4cd; box-shadow:inset 0 0 .5rem #00E59B55,0 0 5rem 5px #00E59B55,inset 0 0 3.5rem #00E59B55;}
+  #bgl:hover a,#bgl a:focus,#bgl a.active{border-color:#fae0bc; box-shadow:inset 0 0 .5rem #FCA32655,0 0 5rem 5px #FCA32655,inset 0 0 3.5rem #FCA32655;}
+  #bpf:hover a,#bpf a:focus,#bpf a.active{border-color:#e0d7a2; box-shadow:inset 0 0 .5rem #e4c40f55,0 0 5rem 5px #e4c40f55,inset 0 0 3.5rem #e4c40f55;}
+  #bgh:hover a,#bgh a:focus,#bgh a.active{border-color:#f5f4f5; box-shadow:inset 0 0 .5rem #c3afd055,0 0 5rem 5px #c3afd055,inset 0 0 3.5rem #c3afd055;}
+  #btw:hover a,#btw a:focus,#btw a.active{border-color:#b4d9f1; box-shadow:inset 0 0 .5rem #1D9BF055,0 0 5rem 5px #1D9BF055,inset 0 0 3.5rem #1D9BF055;}
+  #bsk:hover a,#bsk a:focus,#bsk a.active{border-color:#badcfc; box-shadow:inset 0 0 .5rem #0886fe55,0 0 5rem 5px #0886fe55,inset 0 0 3.5rem #0886fe55;}
+
+  .l:nth-child(2n+1) > a {
+    animation: 1s left;
+  }
+  
+  .l:nth-child(2n) > a {
+    animation: 1s right;
+  }
+  
+}

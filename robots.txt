@@ -1,0 +1,48 @@
+# Moteurs de recherches
+User-agent: Qwantify
+Allow: /
+Disallow: /dev*
+Noindex: /dev*
+
+User-agent: DuckDuckBot
+Allow: /
+Disallow: /dev*
+Noindex: /dev*
+
+User-agent: Exabot
+Allow: /
+Disallow: /dev*
+Noindex: /dev*
+
+
+# Google
+User-agent: Googlebot
+Allow: /
+Disallow: /dev*
+Noindex: /dev*
+
+User-agent: Mediapartners-Google
+Disallow: /
+
+User-agent: GoogleOther
+Disallow: /
+
+User-agent: Google-InspectionTool
+Disallow: /
+
+
+# IA
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+# Sitemap
+Sitemap: https://links.nesakko.xyz/sitemap.xml

@@ -1,6 +1,13 @@
+/*
+  Copyright © 2023 Nesakko
+  This work is free. You can redistribute it and/or modify it under the terms of the Do What The Fuck You Want To Public License, Version 2, as published by Sam Hocevar. See the LICENSE file for more details.
+*/
+
+// General stuff, which we could call something like "main" ¯\_(ツ)_/¯
+
 document.addEventListener('DOMContentLoaded', function() {
-  var switchElement = document.getElementById('toggleSwitch');
-  var elements = document.querySelectorAll('.un');
+  const switchElement = document.getElementById('toggleSwitch');
+  const elements = document.querySelectorAll('.un');
 
   switchElement.addEventListener('change', function() {
     elements.forEach(function(element) {
@@ -11,12 +18,12 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 
-    var switchState = switchElement.checked ? 'on' : 'off';
-    localStorage.setItem('switchState', switchState);
+    const linkSwitch = switchElement.checked ? 'on' : 'off';
+    localStorage.setItem('linkSwitch', linkSwitch);
   });
 
-  var storedSwitchState = localStorage.getItem('switchState');
-  if (storedSwitchState === 'on') {
+  const storedlinkSwitch = localStorage.getItem('linkSwitch');
+  if (storedlinkSwitch === 'on') {
     switchElement.checked = true;
     elements.forEach(function(element) {
     element.style.display = 'block';

@@ -1,0 +1,52 @@
+/*
+  Copyright © 2023 Nesakko
+  This work is free. You can redistribute it and/or modify it under the terms of the Do What The Fuck You Want To Public License, Version 2, as published by Sam Hocevar. See the LICENSE file for more details.
+*/
+
+/* Body's fade */
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Left and right links animation */
+@keyframes left {
+  0% {
+    opacity: 0;
+    transform: translateX(-200vw) scale(2, 0);
+  }
+  50% {
+    opacity: 0;
+    transform: translateX(-200vw) scale(2, 0);
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0) scale(1, 1);
+  }
+}
+
+@keyframes right {
+  0% {
+    opacity: 0;
+    transform: translateX(200vw) scale(2, 0);
+  }
+  50% {
+    opacity: 0;
+    transform: translateX(200vw) scale(2, 0);
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0) scale(1, 1);
+  }
+}

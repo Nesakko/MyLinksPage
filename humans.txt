@@ -1,3 +1,5 @@
+/* see https://humanstxt.org/ */
+
 
 /* Web developement */
 Author: Nesakko

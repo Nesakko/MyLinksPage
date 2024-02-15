@@ -1,9 +1,9 @@
 /*
-	Copyright © 2023 Nesakko
-	This work is free. You can redistribute it and/or modify it under the terms of the Do What The Fuck You Want To Public License, Version 2, as published by Sam Hocevar. See the LICENCE file for more details.
+  Copyright © 2023 Nesakko
+  This work is free. You can redistribute it and/or modify it under the terms of the Do What The Fuck You Want To Public License, Version 2, as published by Sam Hocevar. See the LICENSE file for more details.
 */
 
-// To be honest, thanks AI for some help (for translation and part of the code) ^^'\
+// To be honest, thanks AI for some help (for language translation and some help on code) ^^'\
 
 // Translation and language menu
 

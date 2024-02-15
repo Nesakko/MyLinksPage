@@ -26,10 +26,12 @@ body{
   margin:0;
   height: 100vh;
   animation: 1s ease-in-out fade;
+  
 }
 html{
   scrollbar-color: #1e2129 #14161a;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 header{
   overflow:hidden;
@@ -250,5 +252,45 @@ footer{
     transform: translateY(0);
     transition: .15s ease-out .15s;
     opacity: 1;
+  }
+  
+  .info {
+    display: block;
+    position: absolute;
+    top: 50px;
+    width: 0;
+    height: 20px;
+    right: 0;
+    padding: 10px 30px 10px 1em;
+    border-radius: 16px 0 0 16px;
+    box-shadow: 0 0 16px #00000050;
+    background-color: #1a1c20;
+    /* transition: .5s .5s; */
+    transition:
+      width .25s .75s,
+      height .3s .5s,
+      background-color .25s 0s;
+  }
+  .info:hover, .info:focus {
+    width: 300px;
+    height:220px;
+    background-color: #1e2129;
+    transition:
+      width .25s .2s,
+      height .25s .4s,
+      background-color .25s 0s;
+  }
+  .infoBubble {
+    text-align: left;
+    margin: 10px auto;
+    opacity: 0;
+    transition: .5s .15s;
+  }
+  .infoBubble p {
+    text-align: left;
+  }
+  .info:hover > .infoBubble, .info:focus > .infoBubble {
+    opacity: 1;
+    transition: .35s .7s;
   }
 }

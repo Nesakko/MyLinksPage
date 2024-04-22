@@ -1,0 +1,53 @@
+/*
+  Copyright © 2024 Nesakko
+  This work is free. You can redistribute it and/or modify it under the terms of the Do What The Fuck You Want To Public License, Version 2, as published by Sam Hocevar. See the LICENSE file for more details.
+*/
+
+/* Stylesheet for printer (Why not ¯\_(ツ)_/¯ ) */
+* {
+  print-color-adjust: exact;
+}
+
+html, body, header, footer {
+  background-color: #fff;
+}
+footer, header {
+  box-shadow: none;
+}
+.pt {
+  display: inline;
+}
+.info, .infoBubble, .dropLang, .curLang, .selLang, .optLang, .scr, input, .h:nth-child(2), .f_site{
+  display: none;
+}
+h1 {
+  text-align: center;
+}
+ul{
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+.l, .un {
+  list-style: none;
+  display: inline-block;
+  margin: 4px;
+  padding: 12px;
+}
+.f_print{
+  display: block;
+}
+
+.l::after{
+  content: url('../test.png');
+  display: block;
+}
+
+.mli {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: space-evenly;
+}

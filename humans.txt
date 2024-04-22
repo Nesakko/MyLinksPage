@@ -9,7 +9,7 @@ Location: France
 
 /* Site */
 Creation date: 2021
-Last update: 2023
+Last update: 2024
 Standards: HTML5, CSS3, JavaScript
 Software: VScode, Firefox
 Git repository: https://codeberg.org/Nesakko/MyLinksPage

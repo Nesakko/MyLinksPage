@@ -3,11 +3,11 @@
   This work is free. You can redistribute it and/or modify it under the terms of the Do What The Fuck You Want To Public License, Version 2, as published by Sam Hocevar. See the LICENSE file for more details.
 */
 
-/* Stylesheet for printer (Why not ¯\_(ツ)_/¯ ) */
+/* Stylesheet for printer ¯\_(ツ)_/¯ */
 * {
   print-color-adjust: exact;
+  color: #000;
 }
-
 html, body, header, footer {
   background-color: #fff;
 }
@@ -30,24 +30,21 @@ ul{
 a {
   text-decoration: none;
 }
-.l, .un {
-  list-style: none;
-  display: inline-block;
-  margin: 4px;
-  padding: 12px;
-}
-.f_print{
-  display: block;
-}
-
-.l::after{
-  content: url('../test.png');
-  display: block;
-}
-
 .mli {
   width: 100%;
   display: flex;
   justify-content: center;
   align-content: space-evenly;
+}
+.l, .un {
+  list-style: none;
+  display: inline-block;
+  margin: 0;
+}
+.f_print{
+  display: block;
+}
+.l a {
+  max-width: 160px;
+  max-height: 160px;
 }

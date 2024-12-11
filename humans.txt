@@ -4,7 +4,6 @@
 /* Web developement */
 Author: Nesakko
 Email: nesakko [at] tutanota.com
-XMPP: me [at] nesakko.xyz
 Location: France
 
 /* Site */

@@ -3,11 +3,7 @@
   This work is free. You can redistribute it and/or modify it under the terms of the Do What The Fuck You Want To Public License, Version 2, as published by Sam Hocevar. See the LICENSE file for more details.
 */
 
-/* Main stylesheet */
-
-/* Light/Dark global color schemes */
-
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   :root {
     --bg1: #eae4f0;
     --bg2: #9688c5;
@@ -19,9 +15,9 @@
     --link-text-col: #9c8aad;
     --link-shad: 4px 16px 16px #0000004d;
   }
-}
+} */
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) { */
   :root {
     --bg1: #1b1e24;
     --bg2: #171a1f;
@@ -33,44 +29,66 @@
     --link-text-col: #3a4046;
     --link-shad: 4px 16px 16px #00000015;
   }
+/* } */
+
+@media (prefers-reduced-motion: no-preference), (update: slow) {
+  :root {
+    --body-animation: 1s ease-in-out fade;
+  }
+  
+  @keyframes fade {
+    0% { opacity: 0; }
+    33% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  body {
+    animation: var(--body-animation);
+    -webkit-animation: var(--body-animation);
+  }
+  * {
+    transition:
+      background-color .5s ease,
+      color .5s ease;
+    -webkit-transition:
+      background-color .5s ease,
+      color .5s ease;
+  }
+  a, abbr{
+    transition: 
+      text-shadow .3s ease,
+      color .5s ease;
+    -webkit-transition:
+      text-shadow .3s ease,
+      color .5s ease;
+  }
 }
 
-/* Font use is inter, see https://rsms.me/inter/ */
+/* Inter from https://rsms.me/inter/ */
 @font-face {
   font-family: Inter;
   src: url(../font/InterVariable.woff2);
 }
+/* OpenDyslexic from https://opendyslexic.org/ */
+@font-face {
+  font-family: OpenDys;
+  src: url(../font/OpenDyslexic-Regular.woff2);
+}
 
-*{
+* {
   color:var(--text-color);
   text-align:center;
-  transition: 
-    background-color .5s ease,
-    color .5s ease;
-  -webkit-transition:
-    background-color .5s ease,
-    color .5s ease;
 }
 ::selection{
   background-color:#4d15a8;
   color: #ffffff;
 }
-a, abbr{
-  transition: 
-    text-shadow .3s ease,
-    color .5s ease;
-  -webkit-transition:
-    text-shadow .3s ease,
-    color .5s ease;
-}
 body{
   background-color:var(--bg1);
-  font-family: 'inter', system-ui;
+  font-family: 'Inter', system-ui;
   font-weight:600;
   margin:0;
   height: 100vh;
-  animation: 1s ease-in-out fade;
-  -webkit-animation: 1s ease-in-out fade;
 }
 html{
   scrollbar-color: var(--bg2) var(--bg1);

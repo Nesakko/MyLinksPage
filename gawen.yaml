@@ -1,0 +1,97 @@
+base:
+  site:
+    title: "Nesakko's links"
+    description: "All my links in one place, find my galleries, social networks, support platforms, etc..."
+    author: "Nesakko"
+
+  links:
+    - title: "Discord"
+      url: "https://discord.gg/QjfjpH6ufk"
+      description: "My discord server"
+      class: "bdc"
+      visible: true
+
+    - title: "Bluesky"
+      url: "https://bsky.app/profile/nesakko.xyz"
+      class: "bsk"
+      visible: true
+
+    - title: "Twitter"
+      url: "https://twitter.com/@Nesakko_"
+      class: "btw"
+      visible: true
+
+    - title: "Misskey"
+      url: "https://misskey.io/@Nesakko"
+      class: "bmi"
+      visible: true
+
+    - title: "Codeberg"
+      url: "https://codeberg.org/Nesakko"
+      class: "bcb"
+      visible: true
+
+    - title: "Liberapay"
+      url: "https://liberapay.com/Nesakko"
+      class: "blp"
+      visible: true
+
+    - title: "Gumroad"
+      url: "https://nesakko.gumroad.com"
+      class: "bgr"
+      visible: true
+
+    - title: "Ko-Fi"
+      url: "https://ko-fi.com/Nesakko"
+      class: "bkf"
+      visible: true
+
+    - title: "Reddit"
+      url: "https://www.reddit.com/user/Nesakko"
+      class: "brd"
+      visible: true
+
+    - title: "OpenSea"
+      url: "https://opensea.io/nesakko"
+      class: "bos"
+      visible: false
+
+    - title: "Foundation"
+      url: "https://foundation.app/@Nesakko"
+      class: "bfd"
+      visible: false
+
+    - title: "Pixelfed"
+      url: "https://pixelfed.de/@Nesakko"
+      class: "bpf"
+      visible: false
+
+    - title: "Deviant Art"
+      url: "https://www.deviantart.com/nesakko"
+      class: "bda"
+      visible: false
+
+    - title: "Subscribestar"
+      url: "https://subscribestar.adult/nesakko"
+      class: "bss"
+      visible: false
+
+    - title: "Patreon"
+      url: "https://www.patreon.com/Nesakko"
+      class: "bpt"
+      visible: false
+
+    - title: "Porn3DX"
+      url: "https://porn3dx.com/Nesakko"
+      class: "bdx"
+      visible: false
+
+    - title: "GitLab"
+      url: "https://gitlab.com/Nesakko"
+      class: "bgl"
+      visible: false
+
+    - title: "GitHub"
+      url: "https://github.com/Nesakko"
+      class: "bgh"
+      visible: false

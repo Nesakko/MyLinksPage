@@ -1,0 +1,136 @@
+{{- $title := .Site.Title -}}
+{{- $desc := .Site.Description -}}
+{{- $me := .Site.Author -}}
+<!DOCTYPE html>
+<html lang="{{ .Site.Lang }}">
+<head>
+<title>{{ $title }}</title>
+<meta charset="UTF-8">
+<link rel="shortcut icon" type="image/jpg" href="data:image/jpg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD//gAVX3FfaWNvT3JpZ0RlcHRoOiAzMv/bAEMAAwICAwICAwMDAwQDAwQFCAUFBAQFCgcHBggMCgwMCwoLCw0OEhANDhEOCwsQFhARExQVFRUMDxcYFhQYEhQVFP/bAEMBAwQEBQQFCQUFCRQNCw0UFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFP/AABEIABAAEAMBIgACEQEDEQH/xAAfAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgv/xAC1EAACAQMDAgQDBQUEBAAAAX0BAgMABBEFEiExQQYTUWEHInEUMoGRoQgjQrHBFVLR8CQzYnKCCQoWFxgZGiUmJygpKjQ1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4eLj5OXm5+jp6vHy8/T19vf4+fr/xAAfAQADAQEBAQEBAQEBAAAAAAAAAQIDBAUGBwgJCgv/xAC1EQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6ery8/T19vf4+fr/2gAMAwEAAhEDEQA/APWv29fibqd/8bPD3wwj8T+IvC2mvoX9rI3huR45b65kmljEchQglFWEkDOMuSc8Y9M/Yy8ceLNNu5vhv4q1m68VPY6b/aFtrF6kgnQeeY2gaSQ7p1AKFZcL3GMba+afjL8WfEP7VPjx9V8HeDraDVfAviCay0zWo5z5klorqJPMGCJFfBIUbdpPU5NfWn7PXiG18KaVO+s2F+dUu5UifUHh3LGhJbytxbO1ZHkP/AgOgFcU6iVZK+h9asP/AMJ1pQ97p39b+R//2Q==">
+<link rel="canonical" href="https://links.nesakko.xyz">
+<link rel="author" href="./humans.txt">
+<script src="./assets/script/i18n.js"></script>
+<link rel="stylesheet" href="./assets/style/main.css">
+<link rel="stylesheet" media="screen" href="./assets/style/links.css">
+<link rel="stylesheet" media="print" href="./assets/style/print.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta itemprop="name" content="{{ $title }}">
+<meta name="description" itemprop="description" content="{{ $desc }}">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $desc }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://links.nesakko.xyz">
+<meta name="twitter:dnt" content="on">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:description" content="{{ $desc }}">
+<meta name="twitter:site" content="@Nesakko_">
+<meta name="twitter:creator" content="@Nesakko_">
+<script defer src="https://anal.3dx.space/script.js" data-website-id="fd5feb65-d524-4312-a9b9-b53583f396f0"></script>
+</head>
+<body>
+  <header>
+    <h1><span class="scr">Nesakk<label class="o"><input type="checkbox"><span class="owo"></span><span class="uwu"></span></label><span class="mar"></span></span><span class="pt">Nesakko</span>'s links</h1>
+  </header>
+  <p class="h"><span data-i18n="adv">Links may contain or be related to adult content</span></p>
+  <p class="h"><span data-i18n="desc">All my links in one place, find my galleries, social networks, support platforms, etc... Just take a look</span><span class="lk"><span class="look">;)</span><span class="eye">👀</span></span></p>
+  <main>
+    <label class="keur"><input type="checkbox" id="toggleSwitch" tabindex="101"><span class="fire"></span></label>
+    <section class="mli">
+      <ul>
+      {{ range .Links }}
+        <li class="l {{ if not .Visible }}un{{ end }}" id="{{ .Class }}">
+          <div class="bg"><div class="im"></div></div>
+          <a title="{{ .Title }}" href="{{ .URL }}" referrerpolicy="no-referrer" data-umami-event="{{ .Title }}">{{ .Title }}</a>
+        </li>
+      {{ end }}
+        <noscript>
+        {{ range .Links }}
+          {{ if not .Visible }}
+            <li class="l" id="{{ .Class }}">
+              <div class="bg"><div class="im"></div></div>
+              <a title="{{ .Title }}" referrerpolicy="no-referrer" href="{{ .URL }}">{{ .Title }}</a>
+            </li>
+          {{ end }}
+        {{ end }}
+        </noscript>
+      </ul>
+      <noscript>
+        <div>
+          <p>PS: even if it's not strictly necessary, enabling JavaScript adds a better experience and makes it possible to load translations :)</p>
+        </div>
+      </noscript>
+    </section>
+    <div id="ctrl"></div>
+  </main>
+<footer>
+  <div class="f_site">
+    <p data-i18n="footer">Made with two left hands, love and luck.</p>
+    <p><label class="keur"><input type="checkbox"><span class="fire"></span></label>2019-{{ .Date.Year }}, {{ $me }}. <span data-i18n="copy">Copying is an act of love. Please copy and do what you want wih it.</span></p>
+  </div>
+  <div class="f_print">
+    <p> {{ .Date.Year }}, {{ $me }}. Sharing is an act of love 💕</p>
+  </div>
+  <div class="dropLang">
+    <div class="curLang" id="selectedL"></div>
+    <div class="selLang">
+      <div class="optLang" idLang="bg">Български</div>
+      <div class="optLang" idLang="ca">Català</div>
+      <div class="optLang" idLang="cs">Čeština</div>
+      <div class="optLang" idLang="da">Dansk</div>
+      <div class="optLang" idLang="de">Deutsch</div>
+      <div class="optLang" idLang="el">Ελληνικά</div>
+      <div class="optLang" idLang="en">English</div>
+      <div class="optLang" idLang="eo">Esperanto</div>
+      <div class="optLang" idLang="es">Español</div>
+      <div class="optLang" idLang="et">Eesti</div>
+      <div class="optLang" idLang="fi">Suomi</div>
+      <div class="optLang" idLang="fr">Français</div>
+      <div class="optLang" idLang="hu">Magyar</div>
+      <div class="optLang" idLang="it">Italiano</div>
+      <div class="optLang" idLang="ja">日本語</div>
+      <div class="optLang" idLang="ko">한국어</div>
+      <div class="optLang" idLang="lt">Lietuvių</div>
+      <div class="optLang" idLang="nl">Nederlands</div>
+      <div class="optLang" idLang="pl">Polski</div>
+      <div class="optLang" idLang="pt">Português</div>
+      <div class="optLang" idLang="ro">Română</div>
+      <div class="optLang" idLang="ru">Русский</div>
+      <div class="optLang" idLang="sv">Svenska</div>
+      <div class="optLang" idLang="uk">Українська</div>
+      <div class="optLang" idLang="zh">中文</div>
+    </div>
+  </div>
+  <p>Powered with <a title="Gawen" referrerpolicy="no-referrer" target="_blank" href="https://codeberg.org/Nesakko/Gawen">Gawen</a></p>
+</footer>
+<div tabindex="0" class="info">
+  <span>🗺️</span>
+  <div class="infoBubble">
+    <p>Translation issue ?</p>
+    <p>If you can help with the translation <a tabindex="0  " target="_blank" href="https://codeberg.org/Nesakko/MyLinksPage/src/branch/pages/assets/i18n">here</a>, that would help a lot. Thank you!</p>
+  </div>
+</div>
+<script src="./assets/script/main.js"></script>
+<script defer src="./assets/script/gp.js"></script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "jobTitle": "3D artist",
+    "name": "{{ $me }}",
+    "sameAs":
+      [
+      "http://links.nesakko.xyz",
+      {{ range .Links }}"{{ .URL }}",{{ end }}
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "France"
+      },
+    "nationality": "French",
+    "inLanguage": ["bg", "ca", "cs", "da", "de", "el", "en", "eo", "es", "et", "fi", "fr", "hu", "it", "ja", "ko", "lt", "nl", "pl", "pt", "ro", "ru", "sv", "uk", "zh"],
+    "copyrightYear": "{{ .Date.Year }}"
+  }
+</script>
+</body>
+</html>
